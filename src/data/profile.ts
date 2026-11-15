@@ -37,7 +37,8 @@ export const profile = {
     photo: { src: '/me.jpg', alt: 'Arunima Shukla' } satisfies Photo,
     intro: [
       "I'm a software engineer in New York. I build reliable, high-throughput systems that scale, and I work across every part of them: services, data pipelines, data lakes and warehouses, and the infrastructure underneath.",
-      'I own products end to end, from the first design to running in production, and have done so since 2019 at Dell EMC, Goldman Sachs and Rokt. The work I love most is ML infrastructure: the systems that feed the models that act as the brain of a business.',
+      'I own products end to end, from the first design to running in production, and have done so since 2019 at Dell EMC, Goldman Sachs and Rokt. The work I love most is ML infrastructure and data engineering: the systems that feed the models that act as the brain of a business.',
+      "I'm enthusiastic about new technologies, tools and AI-driven development, and always up to talk about them.",
     ],
     now: 'at Rokt, streaming pipelines on Flink, an Iceberg lakehouse, and AI agents that help my team ship.',
     links: [
