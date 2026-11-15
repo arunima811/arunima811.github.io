@@ -1,6 +1,13 @@
 ---
 import data from '../data/contributions.json';
 
+interface Props {
+  id: string;
+  title: string;
+}
+
+const { id, title } = Astro.props;
+
 const COLORS = ['#ebedf0', '#9be9a8', '#40c463', '#30a14e', '#216e39'];
 const CELL = 10;
 const STEP = 12;
@@ -45,27 +52,30 @@ const height = TOP + 7 * STEP;
 ---
 
 {total > 0 && (
-  <figure class="heatmap">
-    <svg viewBox={`0 0 ${width} ${height}`} role="img" aria-label={`${total} GitHub contributions in the last year`}>
-      {monthLabels.map(({ w, t }) => (
-        <text class="label" x={LEFT + w * STEP} y="10">{format(t, { month: 'short' })}</text>
-      ))}
-      {DAY_LABELS.map(([d, name]) => (
-        <text class="label" x="0" y={TOP + d * STEP + CELL - 1}>{name}</text>
-      ))}
-      {weeks.map((week, w) =>
-        week.map(({ t, count }, d) => (
-          <rect x={LEFT + w * STEP} y={TOP + d * STEP} width={CELL} height={CELL} rx="2" fill={COLORS[level(count)]}>
-            {count > 0 && <title>{`${format(t, { month: 'short', day: 'numeric', year: 'numeric' })}: ${count} contribution${count === 1 ? '' : 's'}`}</title>}
-          </rect>
-        )),
-      )}
-    </svg>
-    <figcaption>
-      {total.toLocaleString('en-US')} contributions in the year to {format(end, { month: 'short', day: 'numeric', year: 'numeric' })}, combined from
-      {' '}{data.accounts.map((login, i) => (
-        <>{i > 0 && ' and '}<a href={`https://github.com/${login}`}>@{login}</a></>
-      ))}.
-    </figcaption>
-  </figure>
+  <section class="section" id={id}>
+    <h2>{title}</h2>
+    <figure class="heatmap">
+      <svg viewBox={`0 0 ${width} ${height}`} role="img" aria-label={`${total} GitHub contributions in the last year`}>
+        {monthLabels.map(({ w, t }) => (
+          <text class="label" x={LEFT + w * STEP} y="10">{format(t, { month: 'short' })}</text>
+        ))}
+        {DAY_LABELS.map(([d, name]) => (
+          <text class="label" x="0" y={TOP + d * STEP + CELL - 1}>{name}</text>
+        ))}
+        {weeks.map((week, w) =>
+          week.map(({ t, count }, d) => (
+            <rect x={LEFT + w * STEP} y={TOP + d * STEP} width={CELL} height={CELL} rx="2" fill={COLORS[level(count)]}>
+              {count > 0 && <title>{`${format(t, { month: 'short', day: 'numeric', year: 'numeric' })}: ${count} contribution${count === 1 ? '' : 's'}`}</title>}
+            </rect>
+          )),
+        )}
+      </svg>
+      <figcaption>
+        {total.toLocaleString('en-US')} contributions in the year to {format(end, { month: 'short', day: 'numeric', year: 'numeric' })}, combined from
+        {' '}{data.accounts.map((login, i) => (
+          <>{i > 0 && ' and '}<a href={`https://github.com/${login}`}>@{login}</a></>
+        ))}.
+      </figcaption>
+    </figure>
+  </section>
 )}

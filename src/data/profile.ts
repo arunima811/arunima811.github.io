@@ -153,6 +153,7 @@ export const profile = {
   ] satisfies SideProject[],
 
   recognition: [
+    { when: 'now', what: 'Organizer, Women in Tech conferences and meetups' },
     { when: '2022', what: 'Scholar, Grace Hopper Celebration' },
     { when: '2021', what: 'Open-source mentor, Grace Hopper Celebration' },
     { when: '2021 – 22', what: 'President, Data Science Club, Indiana University' },
@@ -161,6 +162,8 @@ export const profile = {
       when: '2016',
       what: 'Paper (with Aryan Aggrawal): “Channelizing Potential of Indian Youth in Nation Building: Transforming Dreams into Reality”, National Conference, G.B. Pant University of Agriculture & Technology',
     },
+    { when: '', what: 'Rank holder, IIT-JEE' },
+    { when: '', what: 'Qualified, KVPY national science fellowship' },
   ] satisfies Dated[],
 
   notwork: {
