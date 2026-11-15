@@ -1,0 +1,42 @@
+---
+import { existsSync } from 'node:fs';
+import { join } from 'node:path';
+import type { Link, Photo } from '../data/profile';
+
+interface Props {
+  greeting: string;
+  paragraphs: string[];
+  photo: Photo;
+  now?: string;
+  tags?: string[];
+  links: Link[];
+}
+
+const { greeting, paragraphs, photo, now, tags = [], links: allLinks } = Astro.props;
+// A local file link (e.g. /resume.pdf) is shown only once the file exists in public/.
+const links = allLinks.filter(({ href }) => !href.startsWith('/') || existsSync(join(process.cwd(), 'public', href)));
+---
+
+<section class="intro">
+  <div>
+    <h1>{greeting}</h1>
+    {paragraphs.map((p) => <p>{p}</p>)}
+    {now && (
+      <p class="now">
+        <strong>now:</strong>
+        {now}
+      </p>
+    )}
+    {tags.length > 0 && <p class="tags">{tags.join(' · ')}</p>}
+    {links.length > 0 && (
+      <ul class="links">
+        {links.map((link) => (
+          <li>
+            <a href={link.href}>{link.label}</a>
+          </li>
+        ))}
+      </ul>
+    )}
+  </div>
+  <img class="photo" src={photo.src} alt={photo.alt} width="336" height="420" />
+</section>

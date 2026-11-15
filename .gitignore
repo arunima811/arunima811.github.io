@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.astro/
+.DS_Store
+
+# generated from notebooks/ by scripts/nb2md.mjs
+src/generated/
+public/notebooks/

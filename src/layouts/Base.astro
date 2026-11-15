@@ -1,0 +1,60 @@
+---
+import '../styles/global.css';
+import { profile } from '../data/profile';
+import type { Tab } from '../lib/posts';
+
+interface Props {
+  title?: string;
+  description?: string;
+  tab?: Tab;
+  isTabHome?: boolean;
+  indexable?: boolean;
+}
+
+const { title, description = profile.description, tab, isTabHome = false, indexable = true } = Astro.props;
+const pageTitle = title ? `${title} · ${profile.name}` : profile.name;
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const current = (t: Tab) => (t === tab ? (isTabHome ? 'page' : 'true') : undefined);
+const csp = [
+  "default-src 'self'",
+  "img-src 'self' data: https:",
+  "style-src 'self' 'unsafe-inline'",
+  "script-src 'self'",
+  "object-src 'none'",
+  "base-uri 'self'",
+  "form-action 'none'",
+].join('; ');
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {import.meta.env.PROD && <meta http-equiv="Content-Security-Policy" content={csp} />}
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    {indexable ? <link rel="canonical" href={canonical} /> : <meta name="robots" content="noindex" />}
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    {indexable && <meta property="og:url" content={canonical} />}
+    <meta property="og:image" content={new URL(profile.work.photo.src, Astro.site)} />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="site-header">
+        <a class="site-name" href="/">{profile.name}</a>
+        <nav class="tabs" aria-label="Site sections">
+          <a href="/" aria-current={current('work')}>work</a>
+          <a href="/notwork/" aria-current={current('notwork')}>!work</a>
+        </nav>
+      </header>
+      <main>
+        <slot />
+      </main>
+      <footer class="site-footer">© {new Date().getFullYear()} {profile.name}</footer>
+    </div>
+  </body>
+</html>

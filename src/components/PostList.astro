@@ -1,0 +1,24 @@
+---
+import { formatDate, postHref, type Post } from '../lib/posts';
+
+interface Props {
+  posts: Post[];
+}
+
+const { posts } = Astro.props;
+---
+
+<ul class="rows compact">
+  {posts.map((post) => (
+    <li>
+      <time class="when" datetime={post.data.date.toISOString()}>
+        {formatDate(post.data.date)}
+      </time>
+      <div class="what">
+        <a href={postHref(post)}>{post.data.title}</a>
+        {post.data.external && <span class="badge">{new URL(post.data.external).hostname.replace(/^www\./, '')}</span>}
+        {post.data.draft && <span class="badge">draft</span>}
+      </div>
+    </li>
+  ))}
+</ul>

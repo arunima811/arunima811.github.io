@@ -1,0 +1,71 @@
+---
+import data from '../data/contributions.json';
+
+const COLORS = ['#ebedf0', '#9be9a8', '#40c463', '#30a14e', '#216e39'];
+const CELL = 10;
+const STEP = 12;
+const LEFT = 30;
+const TOP = 16;
+const WEEKS = 53;
+const DAY_MS = 86_400_000;
+const DAY_LABELS = [
+  [1, 'Mon'],
+  [3, 'Wed'],
+  [5, 'Fri'],
+] as const;
+
+const counts = data.days as Record<string, number>;
+const isoDate = (t: number) => new Date(t).toISOString().slice(0, 10);
+const format = (t: number, options: Intl.DateTimeFormatOptions) =>
+  new Date(t).toLocaleDateString('en-US', { timeZone: 'UTC', ...options });
+
+const end = Date.parse(`${data.generatedAt.slice(0, 10)}T00:00:00Z`);
+const start = end - (new Date(end).getUTCDay() + (WEEKS - 1) * 7) * DAY_MS;
+
+const weeks = Array.from({ length: WEEKS }, (_, w) =>
+  Array.from({ length: 7 }, (_, d) => start + (w * 7 + d) * DAY_MS)
+    .filter((t) => t <= end)
+    .map((t) => ({ t, count: counts[isoDate(t)] ?? 0 })),
+);
+const total = weeks.flat().reduce((sum, { count }) => sum + count, 0);
+
+const nonZero = weeks.flat().map(({ count }) => count).filter((n) => n > 0).sort((a, b) => a - b);
+const quantile = (p: number) => nonZero[Math.min(nonZero.length - 1, Math.floor(p * nonZero.length))] ?? 0;
+const cuts = [quantile(0.25), quantile(0.5), quantile(0.75)];
+const level = (n: number) => (n === 0 ? 0 : 1 + cuts.filter((cut) => n > cut).length);
+
+const monthOf = (t: number) => new Date(t).getUTCMonth();
+const monthStarts = weeks
+  .map((week, w) => ({ w, t: week[0].t }))
+  .filter(({ t }, w) => w > 0 && w < WEEKS - 1 && monthOf(t) !== monthOf(weeks[w - 1][0].t));
+const monthLabels = monthStarts[0]?.w >= 3 ? [{ w: 0, t: start }, ...monthStarts] : monthStarts;
+
+const width = LEFT + WEEKS * STEP;
+const height = TOP + 7 * STEP;
+---
+
+{total > 0 && (
+  <figure class="heatmap">
+    <svg viewBox={`0 0 ${width} ${height}`} role="img" aria-label={`${total} GitHub contributions in the last year`}>
+      {monthLabels.map(({ w, t }) => (
+        <text class="label" x={LEFT + w * STEP} y="10">{format(t, { month: 'short' })}</text>
+      ))}
+      {DAY_LABELS.map(([d, name]) => (
+        <text class="label" x="0" y={TOP + d * STEP + CELL - 1}>{name}</text>
+      ))}
+      {weeks.map((week, w) =>
+        week.map(({ t, count }, d) => (
+          <rect x={LEFT + w * STEP} y={TOP + d * STEP} width={CELL} height={CELL} rx="2" fill={COLORS[level(count)]}>
+            {count > 0 && <title>{`${format(t, { month: 'short', day: 'numeric', year: 'numeric' })}: ${count} contribution${count === 1 ? '' : 's'}`}</title>}
+          </rect>
+        )),
+      )}
+    </svg>
+    <figcaption>
+      {total.toLocaleString('en-US')} contributions in the year to {format(end, { month: 'short', day: 'numeric', year: 'numeric' })}, combined from
+      {' '}{data.accounts.map((login, i) => (
+        <>{i > 0 && ' and '}<a href={`https://github.com/${login}`}>@{login}</a></>
+      ))}.
+    </figcaption>
+  </figure>
+)}
