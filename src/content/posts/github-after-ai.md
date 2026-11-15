@@ -24,6 +24,20 @@ I wanted to know how much AI has changed the way code gets written. GitHub is th
 
 Sources: [GitHub Octoverse 2026](https://github.blog/news-insights/octoverse/octoverse-commits-pushes-reach-new-highs-in-2026-as-developers-build-with-agents/) and [Octoverse 2025](https://github.blog/news-insights/octoverse/octoverse-a-new-developer-joins-github-every-second-as-ai-leads-typescript-to-1/). The 2026 figures include public and private repositories.
 
+## Eighteen years of growth
+
+Start with the long view. GitHub's growth in people kept its shape through the AI era: from 2012 on, developers roughly doubled every two to three years.
+
+![GitHub developers, millions, 2008 to 2026](/posts/github-after-ai/developers.svg)
+
+<details><summary>Data table</summary><table><thead><tr><th>As of</th><th>Developers</th></tr></thead><tbody><tr><td>end of 2008</td><td>40K</td></tr><tr><td>Jul 2009</td><td>100K</td></tr><tr><td>Sep 2011</td><td>1M</td></tr><tr><td>Dec 2012</td><td>2.8M</td></tr><tr><td>Dec 2013</td><td>4M</td></tr><tr><td>2017</td><td>24M</td></tr><tr><td>2018</td><td>31M</td></tr><tr><td>2019</td><td>40M</td></tr><tr><td>2020</td><td>56M</td></tr><tr><td>2021</td><td>73M</td></tr><tr><td>2022</td><td>94M</td></tr><tr><td>Jan 2023</td><td>100M</td></tr><tr><td>Dec 2024</td><td>150M</td></tr><tr><td>Aug 2025</td><td>180M</td></tr><tr><td>Sep 2026</td><td>225M</td></tr></tbody></table></details>
+
+![GitHub repositories, millions, 2009 to 2025](/posts/github-after-ai/repositories.svg)
+
+<details><summary>Data table</summary><table><thead><tr><th>As of</th><th>Repositories</th></tr></thead><tbody><tr><td>Jan 2009, public only</td><td>50K</td></tr><tr><td>Jul 2010</td><td>1M</td></tr><tr><td>Dec 2012</td><td>4.6M</td></tr><tr><td>Dec 2013</td><td>10M</td></tr><tr><td>2017</td><td>67M</td></tr><tr><td>Nov 2018</td><td>100M</td></tr><tr><td>2023</td><td>420M</td></tr><tr><td>2024</td><td>518M</td></tr><tr><td>Aug 2025</td><td>630M</td></tr></tbody></table></details>
+
+GitHub has changed what it counts over the years (public only, all repositories, with or without forks), so read these as the numbers GitHub reported at the time.
+
 ## 2026 is the jump
 
 GitHub's own count of public contributions grew 12% from 2024 to 2025, then more than doubled in 2026. Across all repositories the jump is bigger: commits and merged pull requests both more than tripled in two years.
@@ -65,20 +79,6 @@ I also measured public activity directly from [GH Archive](https://www.gharchive
 <details><summary>Data table</summary><table><thead><tr><th>Year</th><th>Public commits (at most 1,000 per push)</th><th>PRs merged</th><th>New repos</th><th>Median lines added per merged PR</th></tr></thead><tbody><tr><td>2015</td><td>406.2M</td><td>4M</td><td>11.4M</td><td>21</td></tr><tr><td>2016</td><td>616.6M</td><td>8M</td><td>15.7M</td><td>18</td></tr><tr><td>2017</td><td>797M</td><td>11.4M</td><td>22.3M</td><td>24</td></tr><tr><td>2018</td><td>884.1M</td><td>13M</td><td>23M</td><td>23</td></tr><tr><td>2019</td><td>1.2B</td><td>19.1M</td><td>27.9M</td><td>25</td></tr><tr><td>2020</td><td>1.2B</td><td>23.7M</td><td>35.7M</td><td>26</td></tr><tr><td>2021</td><td>1.6B</td><td>32.9M</td><td>58.4M</td><td>24</td></tr><tr><td>2022</td><td>2.1B</td><td>33.2M</td><td>56.2M</td><td>22</td></tr><tr><td>2023</td><td>2.4B</td><td>38.5M</td><td>58.4M</td><td>22</td></tr><tr><td>2024</td><td>2.9B</td><td>41.5M</td><td>66M</td><td>23</td></tr><tr><td>2025</td><td>3B</td><td>41.8M</td><td>63.4M</td><td>30</td></tr></tbody></table></details>
 
 So the public record shows steady growth through 2025, not an explosion. Three things explain the gap with GitHub's numbers. Most work is private: 81.5% of contributions were in private repositories already in 2025. The big jump came in 2026. And in October 2025 GitHub stopped publishing commit counts in its public event stream, so the public log can't see the jump at all.
-
-## Eighteen years of growth
-
-For context: GitHub's growth in people kept its shape through the AI era. From 2012 on, developers roughly doubled every two to three years.
-
-![GitHub developers, millions, 2008 to 2026](/posts/github-after-ai/developers.svg)
-
-<details><summary>Data table</summary><table><thead><tr><th>As of</th><th>Developers</th></tr></thead><tbody><tr><td>end of 2008</td><td>40K</td></tr><tr><td>Jul 2009</td><td>100K</td></tr><tr><td>Sep 2011</td><td>1M</td></tr><tr><td>Dec 2012</td><td>2.8M</td></tr><tr><td>Dec 2013</td><td>4M</td></tr><tr><td>2017</td><td>24M</td></tr><tr><td>2018</td><td>31M</td></tr><tr><td>2019</td><td>40M</td></tr><tr><td>2020</td><td>56M</td></tr><tr><td>2021</td><td>73M</td></tr><tr><td>2022</td><td>94M</td></tr><tr><td>Jan 2023</td><td>100M</td></tr><tr><td>Dec 2024</td><td>150M</td></tr><tr><td>Aug 2025</td><td>180M</td></tr><tr><td>Sep 2026</td><td>225M</td></tr></tbody></table></details>
-
-![GitHub repositories, millions, 2009 to 2025](/posts/github-after-ai/repositories.svg)
-
-<details><summary>Data table</summary><table><thead><tr><th>As of</th><th>Repositories</th></tr></thead><tbody><tr><td>Jan 2009, public only</td><td>50K</td></tr><tr><td>Jul 2010</td><td>1M</td></tr><tr><td>Dec 2012</td><td>4.6M</td></tr><tr><td>Dec 2013</td><td>10M</td></tr><tr><td>2017</td><td>67M</td></tr><tr><td>Nov 2018</td><td>100M</td></tr><tr><td>2023</td><td>420M</td></tr><tr><td>2024</td><td>518M</td></tr><tr><td>Aug 2025</td><td>630M</td></tr></tbody></table></details>
-
-GitHub has changed what it counts over the years (public only, all repositories, with or without forks), so read these as the numbers GitHub reported at the time.
 
 ## More code, same quality?
 
