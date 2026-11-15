@@ -157,12 +157,12 @@ export const profile = {
     { when: '2022', what: 'Scholar, Grace Hopper Celebration' },
     { when: '2021', what: 'Open-source mentor, Grace Hopper Celebration' },
     { when: '2021 – 22', what: 'President, Data Science Club, Indiana University' },
-    { when: '', what: 'Winner, Dell Hack-to-Hire Machine Learning Hackathon' },
+    { when: '2018', what: 'Winner, Dell Hack-to-Hire Machine Learning Hackathon' },
     {
       when: '2016',
       what: 'Paper (with Aryan Aggrawal): “Channelizing Potential of Indian Youth in Nation Building: Transforming Dreams into Reality”, National Conference, G.B. Pant University of Agriculture & Technology',
     },
-    { when: '', what: 'Rank holder, IIT-JEE' },
+    { when: '2015', what: 'Rank holder, IIT-JEE' },
     { when: '', what: 'Qualified, KVPY national science fellowship' },
   ] satisfies Dated[],
 
