@@ -56,17 +56,9 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
     </ul>
   </section>
 
-  {posts.length > 0 && (
-    <section class="section" id="writing">
-      <h2>writing</h2>
-      <PostList posts={posts} />
-    </section>
-  )}
-
-  <section class="section" id="code">
-    <h2>code</h2>
-    <Heatmap />
-    <ul class="rows compact side-projects">
+  <section class="section" id="side-projects">
+    <h2>side projects</h2>
+    <ul class="rows compact">
       {sideProjects.map((item) => (
         <li>
           <span class="when">{item.when}</span>
@@ -75,6 +67,13 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
       ))}
     </ul>
   </section>
+
+  {posts.length > 0 && (
+    <section class="section" id="writing">
+      <h2>writing</h2>
+      <PostList posts={posts} />
+    </section>
+  )}
 
   <section class="section" id="recognition">
     <h2>recognition</h2>
@@ -86,5 +85,10 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
         </li>
       ))}
     </ul>
+  </section>
+
+  <section class="section" id="visit">
+    <h2>visit</h2>
+    <Heatmap />
   </section>
 </Base>
