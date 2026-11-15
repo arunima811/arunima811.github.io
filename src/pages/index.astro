@@ -13,7 +13,14 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
 ---
 
 <Base tab="work" isTabHome>
-  <Intro greeting={work.greeting} paragraphs={work.intro} photo={work.photo} now={work.now} links={work.links} />
+  <Intro
+    greeting={work.greeting}
+    aka={work.aka}
+    paragraphs={work.intro}
+    photo={work.photo}
+    now={work.now}
+    links={work.links}
+  />
 
   <section class="section" id="experience">
     <h2>experience</h2>

@@ -32,7 +32,8 @@ export const profile = {
     'Arunima Shukla is a software engineer in New York who builds reliable, high-throughput systems end to end: services, data pipelines, data lakes and warehouses, infrastructure and ML infrastructure.',
 
   work: {
-    greeting: "Hi, I'm Arunima, or just Ru.",
+    greeting: "Hi, I'm Arunima.",
+    aka: 'You can call me Ru',
     photo: { src: '/me.jpg', alt: 'Arunima Shukla' } satisfies Photo,
     intro: [
       "I'm a software engineer in New York. I build reliable, high-throughput systems that scale, and I work across every part of them: services, data pipelines, data lakes and warehouses, and the infrastructure underneath.",

@@ -5,6 +5,7 @@ import type { Link, Photo } from '../data/profile';
 
 interface Props {
   greeting: string;
+  aka?: string;
   paragraphs: string[];
   photo: Photo;
   now?: string;
@@ -12,7 +13,7 @@ interface Props {
   links: Link[];
 }
 
-const { greeting, paragraphs, photo, now, tags = [], links: allLinks } = Astro.props;
+const { greeting, aka, paragraphs, photo, now, tags = [], links: allLinks } = Astro.props;
 // A local file link (e.g. /resume.pdf) is shown only once the file exists in public/.
 const links = allLinks.filter(({ href }) => !href.startsWith('/') || existsSync(join(process.cwd(), 'public', href)));
 ---
@@ -20,6 +21,7 @@ const links = allLinks.filter(({ href }) => !href.startsWith('/') || existsSync(
 <section class="intro">
   <div>
     <h1>{greeting}</h1>
+    {aka && <p class="aka">{aka}</p>}
     {paragraphs.map((p) => <p>{p}</p>)}
     {now && (
       <p class="now">
