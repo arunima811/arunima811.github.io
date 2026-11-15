@@ -12,6 +12,7 @@ const postSchema = z.object({
   tags: z.array(z.string()).default([]),
   draft: z.boolean().default(false),
   external: webUrl.optional(),
+  image: z.string().startsWith('/').optional(),
 });
 
 const posts = defineCollection({

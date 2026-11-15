@@ -15,7 +15,7 @@ const { Content } = await render(post);
 const back = post.data.tab === 'work' ? '/#writing' : '/notwork/#writing';
 ---
 
-<Base title={post.data.title} description={post.data.summary} tab={post.data.tab}>
+<Base title={post.data.title} description={post.data.summary} tab={post.data.tab} image={post.data.image}>
   <article class="prose">
     <p class="meta"><a href={back}>← back</a></p>
     <h1>{post.data.title}</h1>

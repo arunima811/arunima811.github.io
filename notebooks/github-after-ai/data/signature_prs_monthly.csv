@@ -1,0 +1,627 @@
+month,source,population,signal_type,signal,matched_prs,denominator_prs,share_pct,body_populated,coverage_status,pr_count_status,window_note
+2023-02,playground,merged,body_signature,sig_any_incl_copilot,119,2960560,0.00401951,yes,full,ok,
+2023-02,playground,merged,body_signature,sig_any_specific,0,2960560,0,yes,full,ok,
+2023-02,playground,merged,body_signature,sig_claude_ai_code_link,0,2960560,0,yes,full,ok,
+2023-02,playground,merged,body_signature,sig_claude_code_mention,0,2960560,0,yes,full,ok,
+2023-02,playground,merged,body_signature,sig_coauthored_by_claude,0,2960560,0,yes,full,ok,
+2023-02,playground,merged,body_signature,sig_codex_link,0,2960560,0,yes,full,ok,
+2023-02,playground,merged,body_signature,sig_copilot_mention,119,2960560,0.00401951,yes,full,ok,
+2023-02,playground,merged,body_signature,sig_cursor_agent_link,0,2960560,0,yes,full,ok,
+2023-02,playground,merged,body_signature,sig_devin_session_link,0,2960560,0,yes,full,ok,
+2023-02,playground,merged,body_signature,sig_generated_with_claude_code,0,2960560,0,yes,full,ok,
+2023-02,playground,merged,body_signature,sig_jules_link,0,2960560,0,yes,full,ok,
+2023-02,playground,opened,body_signature,sig_any_incl_copilot,143,4786327,0.00298768,yes,full,ok,
+2023-02,playground,opened,body_signature,sig_any_specific,0,4786327,0,yes,full,ok,
+2023-02,playground,opened,body_signature,sig_claude_ai_code_link,0,4786327,0,yes,full,ok,
+2023-02,playground,opened,body_signature,sig_claude_code_mention,0,4786327,0,yes,full,ok,
+2023-02,playground,opened,body_signature,sig_coauthored_by_claude,0,4786327,0,yes,full,ok,
+2023-02,playground,opened,body_signature,sig_codex_link,0,4786327,0,yes,full,ok,
+2023-02,playground,opened,body_signature,sig_copilot_mention,143,4786327,0.00298768,yes,full,ok,
+2023-02,playground,opened,body_signature,sig_cursor_agent_link,0,4786327,0,yes,full,ok,
+2023-02,playground,opened,body_signature,sig_devin_session_link,0,4786327,0,yes,full,ok,
+2023-02,playground,opened,body_signature,sig_generated_with_claude_code,0,4786327,0,yes,full,ok,
+2023-02,playground,opened,body_signature,sig_jules_link,0,4786327,0,yes,full,ok,
+2023-02,playground,opened,head_branch_prefix,branch_any_agent_prefix,5,4786327,0.000104464,yes,full,ok,branch names survive the payload break
+2023-02,playground,opened,head_branch_prefix,branch_claude,0,4786327,0,yes,full,ok,branch names survive the payload break
+2023-02,playground,opened,head_branch_prefix,branch_codex,0,4786327,0,yes,full,ok,branch names survive the payload break
+2023-02,playground,opened,head_branch_prefix,branch_copilot,0,4786327,0,yes,full,ok,branch names survive the payload break
+2023-02,playground,opened,head_branch_prefix,branch_cursor,1,4786327,0.0000208928,yes,full,ok,branch names survive the payload break
+2023-02,playground,opened,head_branch_prefix,branch_devin,4,4786327,0.0000835714,yes,full,ok,branch names survive the payload break
+2023-02,playground,opened,union,ai_agent_login_or_agent_branch,5,4786327,0.000104464,yes,full,ok,AI-agent login (setup PRs excluded) OR head branch claude/ codex/ copilot/ cursor/ devin/
+2023-02,playground,opened,union,ai_agent_login_or_branch_or_body_signature,5,4786327,0.000104464,yes,full,ok,adds body signatures (sig_any_specific); events before 2025-10-08 17:00 UTC only
+2023-03,playground,merged,body_signature,sig_any_incl_copilot,899,3186530,0.0282125,yes,minor_gaps,ok,
+2023-03,playground,merged,body_signature,sig_any_specific,0,3186530,0,yes,minor_gaps,ok,
+2023-03,playground,merged,body_signature,sig_claude_ai_code_link,0,3186530,0,yes,minor_gaps,ok,
+2023-03,playground,merged,body_signature,sig_claude_code_mention,0,3186530,0,yes,minor_gaps,ok,
+2023-03,playground,merged,body_signature,sig_coauthored_by_claude,0,3186530,0,yes,minor_gaps,ok,
+2023-03,playground,merged,body_signature,sig_codex_link,0,3186530,0,yes,minor_gaps,ok,
+2023-03,playground,merged,body_signature,sig_copilot_mention,899,3186530,0.0282125,yes,minor_gaps,ok,
+2023-03,playground,merged,body_signature,sig_cursor_agent_link,0,3186530,0,yes,minor_gaps,ok,
+2023-03,playground,merged,body_signature,sig_devin_session_link,0,3186530,0,yes,minor_gaps,ok,
+2023-03,playground,merged,body_signature,sig_generated_with_claude_code,0,3186530,0,yes,minor_gaps,ok,
+2023-03,playground,merged,body_signature,sig_jules_link,0,3186530,0,yes,minor_gaps,ok,
+2023-03,playground,opened,body_signature,sig_any_incl_copilot,1886,4995759,0.037752,yes,minor_gaps,ok,
+2023-03,playground,opened,body_signature,sig_any_specific,0,4995759,0,yes,minor_gaps,ok,
+2023-03,playground,opened,body_signature,sig_claude_ai_code_link,0,4995759,0,yes,minor_gaps,ok,
+2023-03,playground,opened,body_signature,sig_claude_code_mention,0,4995759,0,yes,minor_gaps,ok,
+2023-03,playground,opened,body_signature,sig_coauthored_by_claude,0,4995759,0,yes,minor_gaps,ok,
+2023-03,playground,opened,body_signature,sig_codex_link,0,4995759,0,yes,minor_gaps,ok,
+2023-03,playground,opened,body_signature,sig_copilot_mention,1886,4995759,0.037752,yes,minor_gaps,ok,
+2023-03,playground,opened,body_signature,sig_cursor_agent_link,0,4995759,0,yes,minor_gaps,ok,
+2023-03,playground,opened,body_signature,sig_devin_session_link,0,4995759,0,yes,minor_gaps,ok,
+2023-03,playground,opened,body_signature,sig_generated_with_claude_code,0,4995759,0,yes,minor_gaps,ok,
+2023-03,playground,opened,body_signature,sig_jules_link,0,4995759,0,yes,minor_gaps,ok,
+2023-03,playground,opened,head_branch_prefix,branch_any_agent_prefix,8,4995759,0.000160136,yes,minor_gaps,ok,branch names survive the payload break
+2023-03,playground,opened,head_branch_prefix,branch_claude,7,4995759,0.000140119,yes,minor_gaps,ok,branch names survive the payload break
+2023-03,playground,opened,head_branch_prefix,branch_codex,0,4995759,0,yes,minor_gaps,ok,branch names survive the payload break
+2023-03,playground,opened,head_branch_prefix,branch_copilot,1,4995759,0.000020017,yes,minor_gaps,ok,branch names survive the payload break
+2023-03,playground,opened,head_branch_prefix,branch_cursor,0,4995759,0,yes,minor_gaps,ok,branch names survive the payload break
+2023-03,playground,opened,head_branch_prefix,branch_devin,0,4995759,0,yes,minor_gaps,ok,branch names survive the payload break
+2023-03,playground,opened,union,ai_agent_login_or_agent_branch,8,4995759,0.000160136,yes,minor_gaps,ok,AI-agent login (setup PRs excluded) OR head branch claude/ codex/ copilot/ cursor/ devin/
+2023-03,playground,opened,union,ai_agent_login_or_branch_or_body_signature,8,4995759,0.000160136,yes,minor_gaps,ok,adds body signatures (sig_any_specific); events before 2025-10-08 17:00 UTC only
+2023-04,playground,merged,body_signature,sig_any_incl_copilot,4982,2945230,0.169155,yes,full,ok,
+2023-04,playground,merged,body_signature,sig_any_specific,0,2945230,0,yes,full,ok,
+2023-04,playground,merged,body_signature,sig_claude_ai_code_link,0,2945230,0,yes,full,ok,
+2023-04,playground,merged,body_signature,sig_claude_code_mention,0,2945230,0,yes,full,ok,
+2023-04,playground,merged,body_signature,sig_coauthored_by_claude,0,2945230,0,yes,full,ok,
+2023-04,playground,merged,body_signature,sig_codex_link,0,2945230,0,yes,full,ok,
+2023-04,playground,merged,body_signature,sig_copilot_mention,4982,2945230,0.169155,yes,full,ok,
+2023-04,playground,merged,body_signature,sig_cursor_agent_link,0,2945230,0,yes,full,ok,
+2023-04,playground,merged,body_signature,sig_devin_session_link,0,2945230,0,yes,full,ok,
+2023-04,playground,merged,body_signature,sig_generated_with_claude_code,0,2945230,0,yes,full,ok,
+2023-04,playground,merged,body_signature,sig_jules_link,0,2945230,0,yes,full,ok,
+2023-04,playground,opened,body_signature,sig_any_incl_copilot,8404,4366806,0.192452,yes,full,ok,
+2023-04,playground,opened,body_signature,sig_any_specific,0,4366806,0,yes,full,ok,
+2023-04,playground,opened,body_signature,sig_claude_ai_code_link,0,4366806,0,yes,full,ok,
+2023-04,playground,opened,body_signature,sig_claude_code_mention,0,4366806,0,yes,full,ok,
+2023-04,playground,opened,body_signature,sig_coauthored_by_claude,0,4366806,0,yes,full,ok,
+2023-04,playground,opened,body_signature,sig_codex_link,0,4366806,0,yes,full,ok,
+2023-04,playground,opened,body_signature,sig_copilot_mention,8404,4366806,0.192452,yes,full,ok,
+2023-04,playground,opened,body_signature,sig_cursor_agent_link,0,4366806,0,yes,full,ok,
+2023-04,playground,opened,body_signature,sig_devin_session_link,0,4366806,0,yes,full,ok,
+2023-04,playground,opened,body_signature,sig_generated_with_claude_code,0,4366806,0,yes,full,ok,
+2023-04,playground,opened,body_signature,sig_jules_link,0,4366806,0,yes,full,ok,
+2023-04,playground,opened,head_branch_prefix,branch_any_agent_prefix,5,4366806,0.0001145,yes,full,ok,branch names survive the payload break
+2023-04,playground,opened,head_branch_prefix,branch_claude,0,4366806,0,yes,full,ok,branch names survive the payload break
+2023-04,playground,opened,head_branch_prefix,branch_codex,0,4366806,0,yes,full,ok,branch names survive the payload break
+2023-04,playground,opened,head_branch_prefix,branch_copilot,0,4366806,0,yes,full,ok,branch names survive the payload break
+2023-04,playground,opened,head_branch_prefix,branch_cursor,1,4366806,0.0000229,yes,full,ok,branch names survive the payload break
+2023-04,playground,opened,head_branch_prefix,branch_devin,4,4366806,0.0000916001,yes,full,ok,branch names survive the payload break
+2023-04,playground,opened,union,ai_agent_login_or_agent_branch,7,4366806,0.0001603,yes,full,ok,AI-agent login (setup PRs excluded) OR head branch claude/ codex/ copilot/ cursor/ devin/
+2023-04,playground,opened,union,ai_agent_login_or_branch_or_body_signature,7,4366806,0.0001603,yes,full,ok,adds body signatures (sig_any_specific); events before 2025-10-08 17:00 UTC only
+2023-05,playground,merged,body_signature,sig_any_incl_copilot,3913,3071279,0.127406,yes,full,ok,
+2023-05,playground,merged,body_signature,sig_any_specific,0,3071279,0,yes,full,ok,
+2023-05,playground,merged,body_signature,sig_claude_ai_code_link,0,3071279,0,yes,full,ok,
+2023-05,playground,merged,body_signature,sig_claude_code_mention,0,3071279,0,yes,full,ok,
+2023-05,playground,merged,body_signature,sig_coauthored_by_claude,0,3071279,0,yes,full,ok,
+2023-05,playground,merged,body_signature,sig_codex_link,0,3071279,0,yes,full,ok,
+2023-05,playground,merged,body_signature,sig_copilot_mention,3913,3071279,0.127406,yes,full,ok,
+2023-05,playground,merged,body_signature,sig_cursor_agent_link,0,3071279,0,yes,full,ok,
+2023-05,playground,merged,body_signature,sig_devin_session_link,0,3071279,0,yes,full,ok,
+2023-05,playground,merged,body_signature,sig_generated_with_claude_code,0,3071279,0,yes,full,ok,
+2023-05,playground,merged,body_signature,sig_jules_link,0,3071279,0,yes,full,ok,
+2023-05,playground,opened,body_signature,sig_any_incl_copilot,4616,4551300,0.101422,yes,full,ok,
+2023-05,playground,opened,body_signature,sig_any_specific,0,4551300,0,yes,full,ok,
+2023-05,playground,opened,body_signature,sig_claude_ai_code_link,0,4551300,0,yes,full,ok,
+2023-05,playground,opened,body_signature,sig_claude_code_mention,0,4551300,0,yes,full,ok,
+2023-05,playground,opened,body_signature,sig_coauthored_by_claude,0,4551300,0,yes,full,ok,
+2023-05,playground,opened,body_signature,sig_codex_link,0,4551300,0,yes,full,ok,
+2023-05,playground,opened,body_signature,sig_copilot_mention,4616,4551300,0.101422,yes,full,ok,
+2023-05,playground,opened,body_signature,sig_cursor_agent_link,0,4551300,0,yes,full,ok,
+2023-05,playground,opened,body_signature,sig_devin_session_link,0,4551300,0,yes,full,ok,
+2023-05,playground,opened,body_signature,sig_generated_with_claude_code,0,4551300,0,yes,full,ok,
+2023-05,playground,opened,body_signature,sig_jules_link,0,4551300,0,yes,full,ok,
+2023-05,playground,opened,head_branch_prefix,branch_any_agent_prefix,13,4551300,0.000285633,yes,full,ok,branch names survive the payload break
+2023-05,playground,opened,head_branch_prefix,branch_claude,0,4551300,0,yes,full,ok,branch names survive the payload break
+2023-05,playground,opened,head_branch_prefix,branch_codex,0,4551300,0,yes,full,ok,branch names survive the payload break
+2023-05,playground,opened,head_branch_prefix,branch_copilot,0,4551300,0,yes,full,ok,branch names survive the payload break
+2023-05,playground,opened,head_branch_prefix,branch_cursor,0,4551300,0,yes,full,ok,branch names survive the payload break
+2023-05,playground,opened,head_branch_prefix,branch_devin,13,4551300,0.000285633,yes,full,ok,branch names survive the payload break
+2023-05,playground,opened,union,ai_agent_login_or_agent_branch,95,4551300,0.00208732,yes,full,ok,AI-agent login (setup PRs excluded) OR head branch claude/ codex/ copilot/ cursor/ devin/
+2023-05,playground,opened,union,ai_agent_login_or_branch_or_body_signature,95,4551300,0.00208732,yes,full,ok,adds body signatures (sig_any_specific); events before 2025-10-08 17:00 UTC only
+2023-06,playground,merged,body_signature,sig_any_incl_copilot,3882,2966567,0.130858,yes,full,ok,
+2023-06,playground,merged,body_signature,sig_any_specific,2,2966567,0.000067418,yes,full,ok,
+2023-06,playground,merged,body_signature,sig_claude_ai_code_link,0,2966567,0,yes,full,ok,
+2023-06,playground,merged,body_signature,sig_claude_code_mention,0,2966567,0,yes,full,ok,
+2023-06,playground,merged,body_signature,sig_coauthored_by_claude,2,2966567,0.000067418,yes,full,ok,
+2023-06,playground,merged,body_signature,sig_codex_link,0,2966567,0,yes,full,ok,
+2023-06,playground,merged,body_signature,sig_copilot_mention,3880,2966567,0.130791,yes,full,ok,
+2023-06,playground,merged,body_signature,sig_cursor_agent_link,0,2966567,0,yes,full,ok,
+2023-06,playground,merged,body_signature,sig_devin_session_link,0,2966567,0,yes,full,ok,
+2023-06,playground,merged,body_signature,sig_generated_with_claude_code,0,2966567,0,yes,full,ok,
+2023-06,playground,merged,body_signature,sig_jules_link,0,2966567,0,yes,full,ok,
+2023-06,playground,opened,body_signature,sig_any_incl_copilot,4645,4113028,0.112934,yes,full,ok,
+2023-06,playground,opened,body_signature,sig_any_specific,2,4113028,0.000048626,yes,full,ok,
+2023-06,playground,opened,body_signature,sig_claude_ai_code_link,0,4113028,0,yes,full,ok,
+2023-06,playground,opened,body_signature,sig_claude_code_mention,0,4113028,0,yes,full,ok,
+2023-06,playground,opened,body_signature,sig_coauthored_by_claude,2,4113028,0.000048626,yes,full,ok,
+2023-06,playground,opened,body_signature,sig_codex_link,0,4113028,0,yes,full,ok,
+2023-06,playground,opened,body_signature,sig_copilot_mention,4643,4113028,0.112885,yes,full,ok,
+2023-06,playground,opened,body_signature,sig_cursor_agent_link,0,4113028,0,yes,full,ok,
+2023-06,playground,opened,body_signature,sig_devin_session_link,0,4113028,0,yes,full,ok,
+2023-06,playground,opened,body_signature,sig_generated_with_claude_code,0,4113028,0,yes,full,ok,
+2023-06,playground,opened,body_signature,sig_jules_link,0,4113028,0,yes,full,ok,
+2023-06,playground,opened,head_branch_prefix,branch_any_agent_prefix,19,4113028,0.000461947,yes,full,ok,branch names survive the payload break
+2023-06,playground,opened,head_branch_prefix,branch_claude,16,4113028,0.000389008,yes,full,ok,branch names survive the payload break
+2023-06,playground,opened,head_branch_prefix,branch_codex,0,4113028,0,yes,full,ok,branch names survive the payload break
+2023-06,playground,opened,head_branch_prefix,branch_copilot,0,4113028,0,yes,full,ok,branch names survive the payload break
+2023-06,playground,opened,head_branch_prefix,branch_cursor,0,4113028,0,yes,full,ok,branch names survive the payload break
+2023-06,playground,opened,head_branch_prefix,branch_devin,3,4113028,0.000072939,yes,full,ok,branch names survive the payload break
+2023-06,playground,opened,union,ai_agent_login_or_agent_branch,619,4113028,0.0150497,yes,full,ok,AI-agent login (setup PRs excluded) OR head branch claude/ codex/ copilot/ cursor/ devin/
+2023-06,playground,opened,union,ai_agent_login_or_branch_or_body_signature,621,4113028,0.0150984,yes,full,ok,adds body signatures (sig_any_specific); events before 2025-10-08 17:00 UTC only
+2023-07,playground,merged,body_signature,sig_any_incl_copilot,3805,3003134,0.126701,yes,full,ok,
+2023-07,playground,merged,body_signature,sig_any_specific,0,3003134,0,yes,full,ok,
+2023-07,playground,merged,body_signature,sig_claude_ai_code_link,0,3003134,0,yes,full,ok,
+2023-07,playground,merged,body_signature,sig_claude_code_mention,0,3003134,0,yes,full,ok,
+2023-07,playground,merged,body_signature,sig_coauthored_by_claude,0,3003134,0,yes,full,ok,
+2023-07,playground,merged,body_signature,sig_codex_link,0,3003134,0,yes,full,ok,
+2023-07,playground,merged,body_signature,sig_copilot_mention,3805,3003134,0.126701,yes,full,ok,
+2023-07,playground,merged,body_signature,sig_cursor_agent_link,0,3003134,0,yes,full,ok,
+2023-07,playground,merged,body_signature,sig_devin_session_link,0,3003134,0,yes,full,ok,
+2023-07,playground,merged,body_signature,sig_generated_with_claude_code,0,3003134,0,yes,full,ok,
+2023-07,playground,merged,body_signature,sig_jules_link,0,3003134,0,yes,full,ok,
+2023-07,playground,opened,body_signature,sig_any_incl_copilot,4474,4493575,0.0995644,yes,full,ok,
+2023-07,playground,opened,body_signature,sig_any_specific,0,4493575,0,yes,full,ok,
+2023-07,playground,opened,body_signature,sig_claude_ai_code_link,0,4493575,0,yes,full,ok,
+2023-07,playground,opened,body_signature,sig_claude_code_mention,0,4493575,0,yes,full,ok,
+2023-07,playground,opened,body_signature,sig_coauthored_by_claude,0,4493575,0,yes,full,ok,
+2023-07,playground,opened,body_signature,sig_codex_link,0,4493575,0,yes,full,ok,
+2023-07,playground,opened,body_signature,sig_copilot_mention,4474,4493575,0.0995644,yes,full,ok,
+2023-07,playground,opened,body_signature,sig_cursor_agent_link,0,4493575,0,yes,full,ok,
+2023-07,playground,opened,body_signature,sig_devin_session_link,0,4493575,0,yes,full,ok,
+2023-07,playground,opened,body_signature,sig_generated_with_claude_code,0,4493575,0,yes,full,ok,
+2023-07,playground,opened,body_signature,sig_jules_link,0,4493575,0,yes,full,ok,
+2023-07,playground,opened,head_branch_prefix,branch_any_agent_prefix,12,4493575,0.000267048,yes,full,ok,branch names survive the payload break
+2023-07,playground,opened,head_branch_prefix,branch_claude,6,4493575,0.000133524,yes,full,ok,branch names survive the payload break
+2023-07,playground,opened,head_branch_prefix,branch_codex,0,4493575,0,yes,full,ok,branch names survive the payload break
+2023-07,playground,opened,head_branch_prefix,branch_copilot,2,4493575,0.000044508,yes,full,ok,branch names survive the payload break
+2023-07,playground,opened,head_branch_prefix,branch_cursor,0,4493575,0,yes,full,ok,branch names survive the payload break
+2023-07,playground,opened,head_branch_prefix,branch_devin,4,4493575,0.000089016,yes,full,ok,branch names survive the payload break
+2023-07,playground,opened,union,ai_agent_login_or_agent_branch,2738,4493575,0.0609314,yes,full,ok,AI-agent login (setup PRs excluded) OR head branch claude/ codex/ copilot/ cursor/ devin/
+2023-07,playground,opened,union,ai_agent_login_or_branch_or_body_signature,2738,4493575,0.0609314,yes,full,ok,adds body signatures (sig_any_specific); events before 2025-10-08 17:00 UTC only
+2023-08,playground,merged,body_signature,sig_any_incl_copilot,4700,3021809,0.155536,yes,full,ok,
+2023-08,playground,merged,body_signature,sig_any_specific,0,3021809,0,yes,full,ok,
+2023-08,playground,merged,body_signature,sig_claude_ai_code_link,0,3021809,0,yes,full,ok,
+2023-08,playground,merged,body_signature,sig_claude_code_mention,0,3021809,0,yes,full,ok,
+2023-08,playground,merged,body_signature,sig_coauthored_by_claude,0,3021809,0,yes,full,ok,
+2023-08,playground,merged,body_signature,sig_codex_link,0,3021809,0,yes,full,ok,
+2023-08,playground,merged,body_signature,sig_copilot_mention,4700,3021809,0.155536,yes,full,ok,
+2023-08,playground,merged,body_signature,sig_cursor_agent_link,0,3021809,0,yes,full,ok,
+2023-08,playground,merged,body_signature,sig_devin_session_link,0,3021809,0,yes,full,ok,
+2023-08,playground,merged,body_signature,sig_generated_with_claude_code,0,3021809,0,yes,full,ok,
+2023-08,playground,merged,body_signature,sig_jules_link,0,3021809,0,yes,full,ok,
+2023-08,playground,opened,body_signature,sig_any_incl_copilot,5574,4099068,0.135982,yes,full,ok,
+2023-08,playground,opened,body_signature,sig_any_specific,0,4099068,0,yes,full,ok,
+2023-08,playground,opened,body_signature,sig_claude_ai_code_link,0,4099068,0,yes,full,ok,
+2023-08,playground,opened,body_signature,sig_claude_code_mention,0,4099068,0,yes,full,ok,
+2023-08,playground,opened,body_signature,sig_coauthored_by_claude,0,4099068,0,yes,full,ok,
+2023-08,playground,opened,body_signature,sig_codex_link,0,4099068,0,yes,full,ok,
+2023-08,playground,opened,body_signature,sig_copilot_mention,5574,4099068,0.135982,yes,full,ok,
+2023-08,playground,opened,body_signature,sig_cursor_agent_link,0,4099068,0,yes,full,ok,
+2023-08,playground,opened,body_signature,sig_devin_session_link,0,4099068,0,yes,full,ok,
+2023-08,playground,opened,body_signature,sig_generated_with_claude_code,0,4099068,0,yes,full,ok,
+2023-08,playground,opened,body_signature,sig_jules_link,0,4099068,0,yes,full,ok,
+2023-08,playground,opened,head_branch_prefix,branch_any_agent_prefix,39,4099068,0.000951436,yes,full,ok,branch names survive the payload break
+2023-08,playground,opened,head_branch_prefix,branch_claude,9,4099068,0.000219562,yes,full,ok,branch names survive the payload break
+2023-08,playground,opened,head_branch_prefix,branch_codex,0,4099068,0,yes,full,ok,branch names survive the payload break
+2023-08,playground,opened,head_branch_prefix,branch_copilot,0,4099068,0,yes,full,ok,branch names survive the payload break
+2023-08,playground,opened,head_branch_prefix,branch_cursor,0,4099068,0,yes,full,ok,branch names survive the payload break
+2023-08,playground,opened,head_branch_prefix,branch_devin,30,4099068,0.000731874,yes,full,ok,branch names survive the payload break
+2023-08,playground,opened,union,ai_agent_login_or_agent_branch,2726,4099068,0.0665029,yes,full,ok,AI-agent login (setup PRs excluded) OR head branch claude/ codex/ copilot/ cursor/ devin/
+2023-08,playground,opened,union,ai_agent_login_or_branch_or_body_signature,2726,4099068,0.0665029,yes,full,ok,adds body signatures (sig_any_specific); events before 2025-10-08 17:00 UTC only
+2023-09,playground,merged,body_signature,sig_any_incl_copilot,4436,3058447,0.145041,yes,full,ok,
+2023-09,playground,merged,body_signature,sig_any_specific,0,3058447,0,yes,full,ok,
+2023-09,playground,merged,body_signature,sig_claude_ai_code_link,0,3058447,0,yes,full,ok,
+2023-09,playground,merged,body_signature,sig_claude_code_mention,0,3058447,0,yes,full,ok,
+2023-09,playground,merged,body_signature,sig_coauthored_by_claude,0,3058447,0,yes,full,ok,
+2023-09,playground,merged,body_signature,sig_codex_link,0,3058447,0,yes,full,ok,
+2023-09,playground,merged,body_signature,sig_copilot_mention,4436,3058447,0.145041,yes,full,ok,
+2023-09,playground,merged,body_signature,sig_cursor_agent_link,0,3058447,0,yes,full,ok,
+2023-09,playground,merged,body_signature,sig_devin_session_link,0,3058447,0,yes,full,ok,
+2023-09,playground,merged,body_signature,sig_generated_with_claude_code,0,3058447,0,yes,full,ok,
+2023-09,playground,merged,body_signature,sig_jules_link,0,3058447,0,yes,full,ok,
+2023-09,playground,opened,body_signature,sig_any_incl_copilot,5144,4184820,0.12292,yes,full,ok,
+2023-09,playground,opened,body_signature,sig_any_specific,0,4184820,0,yes,full,ok,
+2023-09,playground,opened,body_signature,sig_claude_ai_code_link,0,4184820,0,yes,full,ok,
+2023-09,playground,opened,body_signature,sig_claude_code_mention,0,4184820,0,yes,full,ok,
+2023-09,playground,opened,body_signature,sig_coauthored_by_claude,0,4184820,0,yes,full,ok,
+2023-09,playground,opened,body_signature,sig_codex_link,0,4184820,0,yes,full,ok,
+2023-09,playground,opened,body_signature,sig_copilot_mention,5144,4184820,0.12292,yes,full,ok,
+2023-09,playground,opened,body_signature,sig_cursor_agent_link,0,4184820,0,yes,full,ok,
+2023-09,playground,opened,body_signature,sig_devin_session_link,0,4184820,0,yes,full,ok,
+2023-09,playground,opened,body_signature,sig_generated_with_claude_code,0,4184820,0,yes,full,ok,
+2023-09,playground,opened,body_signature,sig_jules_link,0,4184820,0,yes,full,ok,
+2023-09,playground,opened,head_branch_prefix,branch_any_agent_prefix,27,4184820,0.000645189,yes,full,ok,branch names survive the payload break
+2023-09,playground,opened,head_branch_prefix,branch_claude,2,4184820,0.0000477918,yes,full,ok,branch names survive the payload break
+2023-09,playground,opened,head_branch_prefix,branch_codex,0,4184820,0,yes,full,ok,branch names survive the payload break
+2023-09,playground,opened,head_branch_prefix,branch_copilot,1,4184820,0.0000238959,yes,full,ok,branch names survive the payload break
+2023-09,playground,opened,head_branch_prefix,branch_cursor,1,4184820,0.0000238959,yes,full,ok,branch names survive the payload break
+2023-09,playground,opened,head_branch_prefix,branch_devin,23,4184820,0.000549605,yes,full,ok,branch names survive the payload break
+2023-09,playground,opened,union,ai_agent_login_or_agent_branch,1286,4184820,0.0307301,yes,full,ok,AI-agent login (setup PRs excluded) OR head branch claude/ codex/ copilot/ cursor/ devin/
+2023-09,playground,opened,union,ai_agent_login_or_branch_or_body_signature,1286,4184820,0.0307301,yes,full,ok,adds body signatures (sig_any_specific); events before 2025-10-08 17:00 UTC only
+2023-10,playground,merged,body_signature,sig_any_incl_copilot,4144,3475226,0.119244,yes,full,ok,
+2023-10,playground,merged,body_signature,sig_any_specific,0,3475226,0,yes,full,ok,
+2023-10,playground,merged,body_signature,sig_claude_ai_code_link,0,3475226,0,yes,full,ok,
+2023-10,playground,merged,body_signature,sig_claude_code_mention,0,3475226,0,yes,full,ok,
+2023-10,playground,merged,body_signature,sig_coauthored_by_claude,0,3475226,0,yes,full,ok,
+2023-10,playground,merged,body_signature,sig_codex_link,0,3475226,0,yes,full,ok,
+2023-10,playground,merged,body_signature,sig_copilot_mention,4144,3475226,0.119244,yes,full,ok,
+2023-10,playground,merged,body_signature,sig_cursor_agent_link,0,3475226,0,yes,full,ok,
+2023-10,playground,merged,body_signature,sig_devin_session_link,0,3475226,0,yes,full,ok,
+2023-10,playground,merged,body_signature,sig_generated_with_claude_code,0,3475226,0,yes,full,ok,
+2023-10,playground,merged,body_signature,sig_jules_link,0,3475226,0,yes,full,ok,
+2023-10,playground,opened,body_signature,sig_any_incl_copilot,4810,5047306,0.0952984,yes,full,ok,
+2023-10,playground,opened,body_signature,sig_any_specific,0,5047306,0,yes,full,ok,
+2023-10,playground,opened,body_signature,sig_claude_ai_code_link,0,5047306,0,yes,full,ok,
+2023-10,playground,opened,body_signature,sig_claude_code_mention,0,5047306,0,yes,full,ok,
+2023-10,playground,opened,body_signature,sig_coauthored_by_claude,0,5047306,0,yes,full,ok,
+2023-10,playground,opened,body_signature,sig_codex_link,0,5047306,0,yes,full,ok,
+2023-10,playground,opened,body_signature,sig_copilot_mention,4810,5047306,0.0952984,yes,full,ok,
+2023-10,playground,opened,body_signature,sig_cursor_agent_link,0,5047306,0,yes,full,ok,
+2023-10,playground,opened,body_signature,sig_devin_session_link,0,5047306,0,yes,full,ok,
+2023-10,playground,opened,body_signature,sig_generated_with_claude_code,0,5047306,0,yes,full,ok,
+2023-10,playground,opened,body_signature,sig_jules_link,0,5047306,0,yes,full,ok,
+2023-10,playground,opened,head_branch_prefix,branch_any_agent_prefix,8,5047306,0.0001585,yes,full,ok,branch names survive the payload break
+2023-10,playground,opened,head_branch_prefix,branch_claude,3,5047306,0.0000594376,yes,full,ok,branch names survive the payload break
+2023-10,playground,opened,head_branch_prefix,branch_codex,0,5047306,0,yes,full,ok,branch names survive the payload break
+2023-10,playground,opened,head_branch_prefix,branch_copilot,0,5047306,0,yes,full,ok,branch names survive the payload break
+2023-10,playground,opened,head_branch_prefix,branch_cursor,0,5047306,0,yes,full,ok,branch names survive the payload break
+2023-10,playground,opened,head_branch_prefix,branch_devin,5,5047306,0.0000990627,yes,full,ok,branch names survive the payload break
+2023-10,playground,opened,union,ai_agent_login_or_agent_branch,1602,5047306,0.0317397,yes,full,ok,AI-agent login (setup PRs excluded) OR head branch claude/ codex/ copilot/ cursor/ devin/
+2023-10,playground,opened,union,ai_agent_login_or_branch_or_body_signature,1602,5047306,0.0317397,yes,full,ok,adds body signatures (sig_any_specific); events before 2025-10-08 17:00 UTC only
+2023-11,playground,merged,body_signature,sig_any_incl_copilot,4143,3314120,0.125011,yes,minor_gaps,ok,
+2023-11,playground,merged,body_signature,sig_any_specific,0,3314120,0,yes,minor_gaps,ok,
+2023-11,playground,merged,body_signature,sig_claude_ai_code_link,0,3314120,0,yes,minor_gaps,ok,
+2023-11,playground,merged,body_signature,sig_claude_code_mention,0,3314120,0,yes,minor_gaps,ok,
+2023-11,playground,merged,body_signature,sig_coauthored_by_claude,0,3314120,0,yes,minor_gaps,ok,
+2023-11,playground,merged,body_signature,sig_codex_link,0,3314120,0,yes,minor_gaps,ok,
+2023-11,playground,merged,body_signature,sig_copilot_mention,4143,3314120,0.125011,yes,minor_gaps,ok,
+2023-11,playground,merged,body_signature,sig_cursor_agent_link,0,3314120,0,yes,minor_gaps,ok,
+2023-11,playground,merged,body_signature,sig_devin_session_link,0,3314120,0,yes,minor_gaps,ok,
+2023-11,playground,merged,body_signature,sig_generated_with_claude_code,0,3314120,0,yes,minor_gaps,ok,
+2023-11,playground,merged,body_signature,sig_jules_link,0,3314120,0,yes,minor_gaps,ok,
+2023-11,playground,opened,body_signature,sig_any_incl_copilot,4706,4553101,0.103358,yes,minor_gaps,ok,
+2023-11,playground,opened,body_signature,sig_any_specific,0,4553101,0,yes,minor_gaps,ok,
+2023-11,playground,opened,body_signature,sig_claude_ai_code_link,0,4553101,0,yes,minor_gaps,ok,
+2023-11,playground,opened,body_signature,sig_claude_code_mention,0,4553101,0,yes,minor_gaps,ok,
+2023-11,playground,opened,body_signature,sig_coauthored_by_claude,0,4553101,0,yes,minor_gaps,ok,
+2023-11,playground,opened,body_signature,sig_codex_link,0,4553101,0,yes,minor_gaps,ok,
+2023-11,playground,opened,body_signature,sig_copilot_mention,4706,4553101,0.103358,yes,minor_gaps,ok,
+2023-11,playground,opened,body_signature,sig_cursor_agent_link,0,4553101,0,yes,minor_gaps,ok,
+2023-11,playground,opened,body_signature,sig_devin_session_link,0,4553101,0,yes,minor_gaps,ok,
+2023-11,playground,opened,body_signature,sig_generated_with_claude_code,0,4553101,0,yes,minor_gaps,ok,
+2023-11,playground,opened,body_signature,sig_jules_link,0,4553101,0,yes,minor_gaps,ok,
+2023-11,playground,opened,head_branch_prefix,branch_any_agent_prefix,10,4553101,0.000219631,yes,minor_gaps,ok,branch names survive the payload break
+2023-11,playground,opened,head_branch_prefix,branch_claude,3,4553101,0.0000658892,yes,minor_gaps,ok,branch names survive the payload break
+2023-11,playground,opened,head_branch_prefix,branch_codex,0,4553101,0,yes,minor_gaps,ok,branch names survive the payload break
+2023-11,playground,opened,head_branch_prefix,branch_copilot,0,4553101,0,yes,minor_gaps,ok,branch names survive the payload break
+2023-11,playground,opened,head_branch_prefix,branch_cursor,0,4553101,0,yes,minor_gaps,ok,branch names survive the payload break
+2023-11,playground,opened,head_branch_prefix,branch_devin,7,4553101,0.000153741,yes,minor_gaps,ok,branch names survive the payload break
+2023-11,playground,opened,union,ai_agent_login_or_agent_branch,1163,4553101,0.025543,yes,minor_gaps,ok,AI-agent login (setup PRs excluded) OR head branch claude/ codex/ copilot/ cursor/ devin/
+2023-11,playground,opened,union,ai_agent_login_or_branch_or_body_signature,1163,4553101,0.025543,yes,minor_gaps,ok,adds body signatures (sig_any_specific); events before 2025-10-08 17:00 UTC only
+2023-12,playground,merged,body_signature,sig_any_incl_copilot,2315,2832016,0.0817439,yes,full,ok,
+2023-12,playground,merged,body_signature,sig_any_specific,0,2832016,0,yes,full,ok,
+2023-12,playground,merged,body_signature,sig_claude_ai_code_link,0,2832016,0,yes,full,ok,
+2023-12,playground,merged,body_signature,sig_claude_code_mention,0,2832016,0,yes,full,ok,
+2023-12,playground,merged,body_signature,sig_coauthored_by_claude,0,2832016,0,yes,full,ok,
+2023-12,playground,merged,body_signature,sig_codex_link,0,2832016,0,yes,full,ok,
+2023-12,playground,merged,body_signature,sig_copilot_mention,2315,2832016,0.0817439,yes,full,ok,
+2023-12,playground,merged,body_signature,sig_cursor_agent_link,0,2832016,0,yes,full,ok,
+2023-12,playground,merged,body_signature,sig_devin_session_link,0,2832016,0,yes,full,ok,
+2023-12,playground,merged,body_signature,sig_generated_with_claude_code,0,2832016,0,yes,full,ok,
+2023-12,playground,merged,body_signature,sig_jules_link,0,2832016,0,yes,full,ok,
+2023-12,playground,opened,body_signature,sig_any_incl_copilot,2538,3919781,0.0647485,yes,full,ok,
+2023-12,playground,opened,body_signature,sig_any_specific,0,3919781,0,yes,full,ok,
+2023-12,playground,opened,body_signature,sig_claude_ai_code_link,0,3919781,0,yes,full,ok,
+2023-12,playground,opened,body_signature,sig_claude_code_mention,0,3919781,0,yes,full,ok,
+2023-12,playground,opened,body_signature,sig_coauthored_by_claude,0,3919781,0,yes,full,ok,
+2023-12,playground,opened,body_signature,sig_codex_link,0,3919781,0,yes,full,ok,
+2023-12,playground,opened,body_signature,sig_copilot_mention,2538,3919781,0.0647485,yes,full,ok,
+2023-12,playground,opened,body_signature,sig_cursor_agent_link,0,3919781,0,yes,full,ok,
+2023-12,playground,opened,body_signature,sig_devin_session_link,0,3919781,0,yes,full,ok,
+2023-12,playground,opened,body_signature,sig_generated_with_claude_code,0,3919781,0,yes,full,ok,
+2023-12,playground,opened,body_signature,sig_jules_link,0,3919781,0,yes,full,ok,
+2023-12,playground,opened,head_branch_prefix,branch_any_agent_prefix,9,3919781,0.000229605,yes,full,ok,branch names survive the payload break
+2023-12,playground,opened,head_branch_prefix,branch_claude,0,3919781,0,yes,full,ok,branch names survive the payload break
+2023-12,playground,opened,head_branch_prefix,branch_codex,0,3919781,0,yes,full,ok,branch names survive the payload break
+2023-12,playground,opened,head_branch_prefix,branch_copilot,3,3919781,0.0000765349,yes,full,ok,branch names survive the payload break
+2023-12,playground,opened,head_branch_prefix,branch_cursor,1,3919781,0.0000255116,yes,full,ok,branch names survive the payload break
+2023-12,playground,opened,head_branch_prefix,branch_devin,5,3919781,0.000127558,yes,full,ok,branch names survive the payload break
+2023-12,playground,opened,union,ai_agent_login_or_agent_branch,2243,3919781,0.0572226,yes,full,ok,AI-agent login (setup PRs excluded) OR head branch claude/ codex/ copilot/ cursor/ devin/
+2023-12,playground,opened,union,ai_agent_login_or_branch_or_body_signature,2243,3919781,0.0572226,yes,full,ok,adds body signatures (sig_any_specific); events before 2025-10-08 17:00 UTC only
+2024-01,playground,merged,body_signature,sig_any_incl_copilot,1879,3282337,0.0572458,yes,full,ok,
+2024-01,playground,merged,body_signature,sig_any_specific,0,3282337,0,yes,full,ok,
+2024-01,playground,merged,body_signature,sig_claude_ai_code_link,0,3282337,0,yes,full,ok,
+2024-01,playground,merged,body_signature,sig_claude_code_mention,0,3282337,0,yes,full,ok,
+2024-01,playground,merged,body_signature,sig_coauthored_by_claude,0,3282337,0,yes,full,ok,
+2024-01,playground,merged,body_signature,sig_codex_link,0,3282337,0,yes,full,ok,
+2024-01,playground,merged,body_signature,sig_copilot_mention,1879,3282337,0.0572458,yes,full,ok,
+2024-01,playground,merged,body_signature,sig_cursor_agent_link,0,3282337,0,yes,full,ok,
+2024-01,playground,merged,body_signature,sig_devin_session_link,0,3282337,0,yes,full,ok,
+2024-01,playground,merged,body_signature,sig_generated_with_claude_code,0,3282337,0,yes,full,ok,
+2024-01,playground,merged,body_signature,sig_jules_link,0,3282337,0,yes,full,ok,
+2024-01,playground,opened,body_signature,sig_any_incl_copilot,1920,4509947,0.0425726,yes,full,ok,
+2024-01,playground,opened,body_signature,sig_any_specific,0,4509947,0,yes,full,ok,
+2024-01,playground,opened,body_signature,sig_claude_ai_code_link,0,4509947,0,yes,full,ok,
+2024-01,playground,opened,body_signature,sig_claude_code_mention,0,4509947,0,yes,full,ok,
+2024-01,playground,opened,body_signature,sig_coauthored_by_claude,0,4509947,0,yes,full,ok,
+2024-01,playground,opened,body_signature,sig_codex_link,0,4509947,0,yes,full,ok,
+2024-01,playground,opened,body_signature,sig_copilot_mention,1920,4509947,0.0425726,yes,full,ok,
+2024-01,playground,opened,body_signature,sig_cursor_agent_link,0,4509947,0,yes,full,ok,
+2024-01,playground,opened,body_signature,sig_devin_session_link,0,4509947,0,yes,full,ok,
+2024-01,playground,opened,body_signature,sig_generated_with_claude_code,0,4509947,0,yes,full,ok,
+2024-01,playground,opened,body_signature,sig_jules_link,0,4509947,0,yes,full,ok,
+2024-01,playground,opened,head_branch_prefix,branch_any_agent_prefix,13,4509947,0.000288252,yes,full,ok,branch names survive the payload break
+2024-01,playground,opened,head_branch_prefix,branch_claude,2,4509947,0.0000443464,yes,full,ok,branch names survive the payload break
+2024-01,playground,opened,head_branch_prefix,branch_codex,0,4509947,0,yes,full,ok,branch names survive the payload break
+2024-01,playground,opened,head_branch_prefix,branch_copilot,0,4509947,0,yes,full,ok,branch names survive the payload break
+2024-01,playground,opened,head_branch_prefix,branch_cursor,0,4509947,0,yes,full,ok,branch names survive the payload break
+2024-01,playground,opened,head_branch_prefix,branch_devin,11,4509947,0.000243905,yes,full,ok,branch names survive the payload break
+2024-01,playground,opened,union,ai_agent_login_or_agent_branch,11917,4509947,0.264238,yes,full,ok,AI-agent login (setup PRs excluded) OR head branch claude/ codex/ copilot/ cursor/ devin/
+2024-01,playground,opened,union,ai_agent_login_or_branch_or_body_signature,11917,4509947,0.264238,yes,full,ok,adds body signatures (sig_any_specific); events before 2025-10-08 17:00 UTC only
+2024-02,playground,merged,body_signature,sig_any_incl_copilot,1339,3198612,0.0418619,yes,full,ok,
+2024-02,playground,merged,body_signature,sig_any_specific,0,3198612,0,yes,full,ok,
+2024-02,playground,merged,body_signature,sig_claude_ai_code_link,0,3198612,0,yes,full,ok,
+2024-02,playground,merged,body_signature,sig_claude_code_mention,0,3198612,0,yes,full,ok,
+2024-02,playground,merged,body_signature,sig_coauthored_by_claude,0,3198612,0,yes,full,ok,
+2024-02,playground,merged,body_signature,sig_codex_link,0,3198612,0,yes,full,ok,
+2024-02,playground,merged,body_signature,sig_copilot_mention,1339,3198612,0.0418619,yes,full,ok,
+2024-02,playground,merged,body_signature,sig_cursor_agent_link,0,3198612,0,yes,full,ok,
+2024-02,playground,merged,body_signature,sig_devin_session_link,0,3198612,0,yes,full,ok,
+2024-02,playground,merged,body_signature,sig_generated_with_claude_code,0,3198612,0,yes,full,ok,
+2024-02,playground,merged,body_signature,sig_jules_link,0,3198612,0,yes,full,ok,
+2024-02,playground,opened,body_signature,sig_any_incl_copilot,1529,4397646,0.0347686,yes,full,ok,
+2024-02,playground,opened,body_signature,sig_any_specific,0,4397646,0,yes,full,ok,
+2024-02,playground,opened,body_signature,sig_claude_ai_code_link,0,4397646,0,yes,full,ok,
+2024-02,playground,opened,body_signature,sig_claude_code_mention,0,4397646,0,yes,full,ok,
+2024-02,playground,opened,body_signature,sig_coauthored_by_claude,0,4397646,0,yes,full,ok,
+2024-02,playground,opened,body_signature,sig_codex_link,0,4397646,0,yes,full,ok,
+2024-02,playground,opened,body_signature,sig_copilot_mention,1529,4397646,0.0347686,yes,full,ok,
+2024-02,playground,opened,body_signature,sig_cursor_agent_link,0,4397646,0,yes,full,ok,
+2024-02,playground,opened,body_signature,sig_devin_session_link,0,4397646,0,yes,full,ok,
+2024-02,playground,opened,body_signature,sig_generated_with_claude_code,0,4397646,0,yes,full,ok,
+2024-02,playground,opened,body_signature,sig_jules_link,0,4397646,0,yes,full,ok,
+2024-02,playground,opened,head_branch_prefix,branch_any_agent_prefix,19,4397646,0.000432049,yes,full,ok,branch names survive the payload break
+2024-02,playground,opened,head_branch_prefix,branch_claude,0,4397646,0,yes,full,ok,branch names survive the payload break
+2024-02,playground,opened,head_branch_prefix,branch_codex,0,4397646,0,yes,full,ok,branch names survive the payload break
+2024-02,playground,opened,head_branch_prefix,branch_copilot,0,4397646,0,yes,full,ok,branch names survive the payload break
+2024-02,playground,opened,head_branch_prefix,branch_cursor,0,4397646,0,yes,full,ok,branch names survive the payload break
+2024-02,playground,opened,head_branch_prefix,branch_devin,19,4397646,0.000432049,yes,full,ok,branch names survive the payload break
+2024-02,playground,opened,union,ai_agent_login_or_agent_branch,1410,4397646,0.0320626,yes,full,ok,AI-agent login (setup PRs excluded) OR head branch claude/ codex/ copilot/ cursor/ devin/
+2024-02,playground,opened,union,ai_agent_login_or_branch_or_body_signature,1410,4397646,0.0320626,yes,full,ok,adds body signatures (sig_any_specific); events before 2025-10-08 17:00 UTC only
+2024-03,playground,merged,body_signature,sig_any_incl_copilot,1456,3459255,0.04209,yes,full,ok,
+2024-03,playground,merged,body_signature,sig_any_specific,0,3459255,0,yes,full,ok,
+2024-03,playground,merged,body_signature,sig_claude_ai_code_link,0,3459255,0,yes,full,ok,
+2024-03,playground,merged,body_signature,sig_claude_code_mention,0,3459255,0,yes,full,ok,
+2024-03,playground,merged,body_signature,sig_coauthored_by_claude,0,3459255,0,yes,full,ok,
+2024-03,playground,merged,body_signature,sig_codex_link,0,3459255,0,yes,full,ok,
+2024-03,playground,merged,body_signature,sig_copilot_mention,1456,3459255,0.04209,yes,full,ok,
+2024-03,playground,merged,body_signature,sig_cursor_agent_link,0,3459255,0,yes,full,ok,
+2024-03,playground,merged,body_signature,sig_devin_session_link,0,3459255,0,yes,full,ok,
+2024-03,playground,merged,body_signature,sig_generated_with_claude_code,0,3459255,0,yes,full,ok,
+2024-03,playground,merged,body_signature,sig_jules_link,0,3459255,0,yes,full,ok,
+2024-03,playground,opened,body_signature,sig_any_incl_copilot,1554,4799689,0.0323771,yes,full,ok,
+2024-03,playground,opened,body_signature,sig_any_specific,0,4799689,0,yes,full,ok,
+2024-03,playground,opened,body_signature,sig_claude_ai_code_link,0,4799689,0,yes,full,ok,
+2024-03,playground,opened,body_signature,sig_claude_code_mention,0,4799689,0,yes,full,ok,
+2024-03,playground,opened,body_signature,sig_coauthored_by_claude,0,4799689,0,yes,full,ok,
+2024-03,playground,opened,body_signature,sig_codex_link,0,4799689,0,yes,full,ok,
+2024-03,playground,opened,body_signature,sig_copilot_mention,1554,4799689,0.0323771,yes,full,ok,
+2024-03,playground,opened,body_signature,sig_cursor_agent_link,0,4799689,0,yes,full,ok,
+2024-03,playground,opened,body_signature,sig_devin_session_link,0,4799689,0,yes,full,ok,
+2024-03,playground,opened,body_signature,sig_generated_with_claude_code,0,4799689,0,yes,full,ok,
+2024-03,playground,opened,body_signature,sig_jules_link,0,4799689,0,yes,full,ok,
+2024-03,playground,opened,head_branch_prefix,branch_any_agent_prefix,11,4799689,0.000229182,yes,full,ok,branch names survive the payload break
+2024-03,playground,opened,head_branch_prefix,branch_claude,0,4799689,0,yes,full,ok,branch names survive the payload break
+2024-03,playground,opened,head_branch_prefix,branch_codex,0,4799689,0,yes,full,ok,branch names survive the payload break
+2024-03,playground,opened,head_branch_prefix,branch_copilot,0,4799689,0,yes,full,ok,branch names survive the payload break
+2024-03,playground,opened,head_branch_prefix,branch_cursor,0,4799689,0,yes,full,ok,branch names survive the payload break
+2024-03,playground,opened,head_branch_prefix,branch_devin,11,4799689,0.000229182,yes,full,ok,branch names survive the payload break
+2024-03,playground,opened,union,ai_agent_login_or_agent_branch,1686,4799689,0.0351273,yes,full,ok,AI-agent login (setup PRs excluded) OR head branch claude/ codex/ copilot/ cursor/ devin/
+2024-03,playground,opened,union,ai_agent_login_or_branch_or_body_signature,1686,4799689,0.0351273,yes,full,ok,adds body signatures (sig_any_specific); events before 2025-10-08 17:00 UTC only
+2024-04,playground,merged,body_signature,sig_any_incl_copilot,1137,3436171,0.0330892,yes,full,ok,
+2024-04,playground,merged,body_signature,sig_any_specific,0,3436171,0,yes,full,ok,
+2024-04,playground,merged,body_signature,sig_claude_ai_code_link,0,3436171,0,yes,full,ok,
+2024-04,playground,merged,body_signature,sig_claude_code_mention,0,3436171,0,yes,full,ok,
+2024-04,playground,merged,body_signature,sig_coauthored_by_claude,0,3436171,0,yes,full,ok,
+2024-04,playground,merged,body_signature,sig_codex_link,0,3436171,0,yes,full,ok,
+2024-04,playground,merged,body_signature,sig_copilot_mention,1137,3436171,0.0330892,yes,full,ok,
+2024-04,playground,merged,body_signature,sig_cursor_agent_link,0,3436171,0,yes,full,ok,
+2024-04,playground,merged,body_signature,sig_devin_session_link,0,3436171,0,yes,full,ok,
+2024-04,playground,merged,body_signature,sig_generated_with_claude_code,0,3436171,0,yes,full,ok,
+2024-04,playground,merged,body_signature,sig_jules_link,0,3436171,0,yes,full,ok,
+2024-04,playground,opened,body_signature,sig_any_incl_copilot,1442,4823512,0.0298952,yes,full,ok,
+2024-04,playground,opened,body_signature,sig_any_specific,0,4823512,0,yes,full,ok,
+2024-04,playground,opened,body_signature,sig_claude_ai_code_link,0,4823512,0,yes,full,ok,
+2024-04,playground,opened,body_signature,sig_claude_code_mention,0,4823512,0,yes,full,ok,
+2024-04,playground,opened,body_signature,sig_coauthored_by_claude,0,4823512,0,yes,full,ok,
+2024-04,playground,opened,body_signature,sig_codex_link,0,4823512,0,yes,full,ok,
+2024-04,playground,opened,body_signature,sig_copilot_mention,1442,4823512,0.0298952,yes,full,ok,
+2024-04,playground,opened,body_signature,sig_cursor_agent_link,0,4823512,0,yes,full,ok,
+2024-04,playground,opened,body_signature,sig_devin_session_link,0,4823512,0,yes,full,ok,
+2024-04,playground,opened,body_signature,sig_generated_with_claude_code,0,4823512,0,yes,full,ok,
+2024-04,playground,opened,body_signature,sig_jules_link,0,4823512,0,yes,full,ok,
+2024-04,playground,opened,head_branch_prefix,branch_any_agent_prefix,17,4823512,0.00035244,yes,full,ok,branch names survive the payload break
+2024-04,playground,opened,head_branch_prefix,branch_claude,0,4823512,0,yes,full,ok,branch names survive the payload break
+2024-04,playground,opened,head_branch_prefix,branch_codex,0,4823512,0,yes,full,ok,branch names survive the payload break
+2024-04,playground,opened,head_branch_prefix,branch_copilot,1,4823512,0.0000207318,yes,full,ok,branch names survive the payload break
+2024-04,playground,opened,head_branch_prefix,branch_cursor,0,4823512,0,yes,full,ok,branch names survive the payload break
+2024-04,playground,opened,head_branch_prefix,branch_devin,16,4823512,0.000331709,yes,full,ok,branch names survive the payload break
+2024-04,playground,opened,union,ai_agent_login_or_agent_branch,730,4823512,0.0151342,yes,full,ok,AI-agent login (setup PRs excluded) OR head branch claude/ codex/ copilot/ cursor/ devin/
+2024-04,playground,opened,union,ai_agent_login_or_branch_or_body_signature,730,4823512,0.0151342,yes,full,ok,adds body signatures (sig_any_specific); events before 2025-10-08 17:00 UTC only
+2024-05,playground,merged,body_signature,sig_any_incl_copilot,1658,3459106,0.0479315,yes,full,ok,
+2024-05,playground,merged,body_signature,sig_any_specific,0,3459106,0,yes,full,ok,
+2024-05,playground,merged,body_signature,sig_claude_ai_code_link,0,3459106,0,yes,full,ok,
+2024-05,playground,merged,body_signature,sig_claude_code_mention,0,3459106,0,yes,full,ok,
+2024-05,playground,merged,body_signature,sig_coauthored_by_claude,0,3459106,0,yes,full,ok,
+2024-05,playground,merged,body_signature,sig_codex_link,0,3459106,0,yes,full,ok,
+2024-05,playground,merged,body_signature,sig_copilot_mention,1658,3459106,0.0479315,yes,full,ok,
+2024-05,playground,merged,body_signature,sig_cursor_agent_link,0,3459106,0,yes,full,ok,
+2024-05,playground,merged,body_signature,sig_devin_session_link,0,3459106,0,yes,full,ok,
+2024-05,playground,merged,body_signature,sig_generated_with_claude_code,0,3459106,0,yes,full,ok,
+2024-05,playground,merged,body_signature,sig_jules_link,0,3459106,0,yes,full,ok,
+2024-05,playground,opened,body_signature,sig_any_incl_copilot,2163,4808752,0.0449805,yes,full,ok,
+2024-05,playground,opened,body_signature,sig_any_specific,0,4808752,0,yes,full,ok,
+2024-05,playground,opened,body_signature,sig_claude_ai_code_link,0,4808752,0,yes,full,ok,
+2024-05,playground,opened,body_signature,sig_claude_code_mention,0,4808752,0,yes,full,ok,
+2024-05,playground,opened,body_signature,sig_coauthored_by_claude,0,4808752,0,yes,full,ok,
+2024-05,playground,opened,body_signature,sig_codex_link,0,4808752,0,yes,full,ok,
+2024-05,playground,opened,body_signature,sig_copilot_mention,2163,4808752,0.0449805,yes,full,ok,
+2024-05,playground,opened,body_signature,sig_cursor_agent_link,0,4808752,0,yes,full,ok,
+2024-05,playground,opened,body_signature,sig_devin_session_link,0,4808752,0,yes,full,ok,
+2024-05,playground,opened,body_signature,sig_generated_with_claude_code,0,4808752,0,yes,full,ok,
+2024-05,playground,opened,body_signature,sig_jules_link,0,4808752,0,yes,full,ok,
+2024-05,playground,opened,head_branch_prefix,branch_any_agent_prefix,13,4808752,0.00027034,yes,full,ok,branch names survive the payload break
+2024-05,playground,opened,head_branch_prefix,branch_claude,0,4808752,0,yes,full,ok,branch names survive the payload break
+2024-05,playground,opened,head_branch_prefix,branch_codex,0,4808752,0,yes,full,ok,branch names survive the payload break
+2024-05,playground,opened,head_branch_prefix,branch_copilot,1,4808752,0.0000207954,yes,full,ok,branch names survive the payload break
+2024-05,playground,opened,head_branch_prefix,branch_cursor,0,4808752,0,yes,full,ok,branch names survive the payload break
+2024-05,playground,opened,head_branch_prefix,branch_devin,12,4808752,0.000249545,yes,full,ok,branch names survive the payload break
+2024-05,playground,opened,union,ai_agent_login_or_agent_branch,788,4808752,0.0163868,yes,full,ok,AI-agent login (setup PRs excluded) OR head branch claude/ codex/ copilot/ cursor/ devin/
+2024-05,playground,opened,union,ai_agent_login_or_branch_or_body_signature,788,4808752,0.0163868,yes,full,ok,adds body signatures (sig_any_specific); events before 2025-10-08 17:00 UTC only
+2024-06,playground,merged,body_signature,sig_any_incl_copilot,194,478881,0.0405111,yes,partial,ok,partial month coverage
+2024-06,playground,merged,body_signature,sig_any_specific,0,478881,0,yes,partial,ok,partial month coverage
+2024-06,playground,merged,body_signature,sig_claude_ai_code_link,0,478881,0,yes,partial,ok,partial month coverage
+2024-06,playground,merged,body_signature,sig_claude_code_mention,0,478881,0,yes,partial,ok,partial month coverage
+2024-06,playground,merged,body_signature,sig_coauthored_by_claude,0,478881,0,yes,partial,ok,partial month coverage
+2024-06,playground,merged,body_signature,sig_codex_link,0,478881,0,yes,partial,ok,partial month coverage
+2024-06,playground,merged,body_signature,sig_copilot_mention,194,478881,0.0405111,yes,partial,ok,partial month coverage
+2024-06,playground,merged,body_signature,sig_cursor_agent_link,0,478881,0,yes,partial,ok,partial month coverage
+2024-06,playground,merged,body_signature,sig_devin_session_link,0,478881,0,yes,partial,ok,partial month coverage
+2024-06,playground,merged,body_signature,sig_generated_with_claude_code,0,478881,0,yes,partial,ok,partial month coverage
+2024-06,playground,merged,body_signature,sig_jules_link,0,478881,0,yes,partial,ok,partial month coverage
+2024-06,playground,opened,body_signature,sig_any_incl_copilot,246,693709,0.0354616,yes,partial,ok,partial month coverage
+2024-06,playground,opened,body_signature,sig_any_specific,0,693709,0,yes,partial,ok,partial month coverage
+2024-06,playground,opened,body_signature,sig_claude_ai_code_link,0,693709,0,yes,partial,ok,partial month coverage
+2024-06,playground,opened,body_signature,sig_claude_code_mention,0,693709,0,yes,partial,ok,partial month coverage
+2024-06,playground,opened,body_signature,sig_coauthored_by_claude,0,693709,0,yes,partial,ok,partial month coverage
+2024-06,playground,opened,body_signature,sig_codex_link,0,693709,0,yes,partial,ok,partial month coverage
+2024-06,playground,opened,body_signature,sig_copilot_mention,246,693709,0.0354616,yes,partial,ok,partial month coverage
+2024-06,playground,opened,body_signature,sig_cursor_agent_link,0,693709,0,yes,partial,ok,partial month coverage
+2024-06,playground,opened,body_signature,sig_devin_session_link,0,693709,0,yes,partial,ok,partial month coverage
+2024-06,playground,opened,body_signature,sig_generated_with_claude_code,0,693709,0,yes,partial,ok,partial month coverage
+2024-06,playground,opened,body_signature,sig_jules_link,0,693709,0,yes,partial,ok,partial month coverage
+2024-06,playground,opened,head_branch_prefix,branch_any_agent_prefix,15,693709,0.00216229,yes,partial,ok,branch names survive the payload break
+2024-06,playground,opened,head_branch_prefix,branch_claude,0,693709,0,yes,partial,ok,branch names survive the payload break
+2024-06,playground,opened,head_branch_prefix,branch_codex,0,693709,0,yes,partial,ok,branch names survive the payload break
+2024-06,playground,opened,head_branch_prefix,branch_copilot,0,693709,0,yes,partial,ok,branch names survive the payload break
+2024-06,playground,opened,head_branch_prefix,branch_cursor,0,693709,0,yes,partial,ok,branch names survive the payload break
+2024-06,playground,opened,head_branch_prefix,branch_devin,15,693709,0.00216229,yes,partial,ok,branch names survive the payload break
+2024-06,playground,opened,union,ai_agent_login_or_agent_branch,71,693709,0.0102348,yes,partial,ok,AI-agent login (setup PRs excluded) OR head branch claude/ codex/ copilot/ cursor/ devin/
+2024-06,playground,opened,union,ai_agent_login_or_branch_or_body_signature,71,693709,0.0102348,yes,partial,ok,adds body signatures (sig_any_specific); events before 2025-10-08 17:00 UTC only
+2025-09,playground,merged,body_signature,sig_any_incl_copilot,55452,464635,11.9345,yes,partial,ok,partial month coverage
+2025-09,playground,merged,body_signature,sig_any_specific,47723,464635,10.2711,yes,partial,ok,partial month coverage
+2025-09,playground,merged,body_signature,sig_claude_ai_code_link,1610,464635,0.346509,yes,partial,ok,partial month coverage
+2025-09,playground,merged,body_signature,sig_claude_code_mention,2853,464635,0.61403,yes,partial,ok,partial month coverage
+2025-09,playground,merged,body_signature,sig_coauthored_by_claude,235,464635,0.0505773,yes,partial,ok,partial month coverage
+2025-09,playground,merged,body_signature,sig_codex_link,41406,464635,8.91151,yes,partial,ok,partial month coverage
+2025-09,playground,merged,body_signature,sig_copilot_mention,7789,464635,1.67637,yes,partial,ok,partial month coverage
+2025-09,playground,merged,body_signature,sig_cursor_agent_link,1925,464635,0.414304,yes,partial,ok,partial month coverage
+2025-09,playground,merged,body_signature,sig_devin_session_link,139,464635,0.029916,yes,partial,ok,partial month coverage
+2025-09,playground,merged,body_signature,sig_generated_with_claude_code,2411,464635,0.518902,yes,partial,ok,partial month coverage
+2025-09,playground,merged,body_signature,sig_jules_link,1394,464635,0.30002,yes,partial,ok,partial month coverage
+2025-09,playground,opened,body_signature,sig_any_incl_copilot,72196,746879,9.66636,yes,partial,ok,partial month coverage
+2025-09,playground,opened,body_signature,sig_any_specific,58553,746879,7.83969,yes,partial,ok,partial month coverage
+2025-09,playground,opened,body_signature,sig_claude_ai_code_link,1829,746879,0.244886,yes,partial,ok,partial month coverage
+2025-09,playground,opened,body_signature,sig_claude_code_mention,3450,746879,0.461922,yes,partial,ok,partial month coverage
+2025-09,playground,opened,body_signature,sig_coauthored_by_claude,291,746879,0.0389621,yes,partial,ok,partial month coverage
+2025-09,playground,opened,body_signature,sig_codex_link,49461,746879,6.62236,yes,partial,ok,partial month coverage
+2025-09,playground,opened,body_signature,sig_copilot_mention,13752,746879,1.84126,yes,partial,ok,partial month coverage
+2025-09,playground,opened,body_signature,sig_cursor_agent_link,3534,746879,0.473169,yes,partial,ok,partial month coverage
+2025-09,playground,opened,body_signature,sig_devin_session_link,325,746879,0.0435144,yes,partial,ok,partial month coverage
+2025-09,playground,opened,body_signature,sig_generated_with_claude_code,2915,746879,0.390291,yes,partial,ok,partial month coverage
+2025-09,playground,opened,body_signature,sig_jules_link,1763,746879,0.236049,yes,partial,ok,partial month coverage
+2025-09,playground,opened,head_branch_prefix,branch_any_agent_prefix,62859,746879,8.41622,yes,partial,ok,branch names survive the payload break
+2025-09,playground,opened,head_branch_prefix,branch_claude,139,746879,0.0186108,yes,partial,ok,branch names survive the payload break
+2025-09,playground,opened,head_branch_prefix,branch_codex,47223,746879,6.32271,yes,partial,ok,branch names survive the payload break
+2025-09,playground,opened,head_branch_prefix,branch_copilot,11260,746879,1.50761,yes,partial,ok,branch names survive the payload break
+2025-09,playground,opened,head_branch_prefix,branch_cursor,3923,746879,0.525252,yes,partial,ok,branch names survive the payload break
+2025-09,playground,opened,head_branch_prefix,branch_devin,314,746879,0.0420416,yes,partial,ok,branch names survive the payload break
+2025-09,playground,opened,union,ai_agent_login_or_agent_branch,65059,746879,8.71078,yes,partial,ok,AI-agent login (setup PRs excluded) OR head branch claude/ codex/ copilot/ cursor/ devin/
+2025-09,playground,opened,union,ai_agent_login_or_branch_or_body_signature,70818,746879,9.48186,yes,partial,ok,adds body signatures (sig_any_specific); events before 2025-10-08 17:00 UTC only
+2025-10,playground,merged,body_signature,sig_any_incl_copilot,92069,802979,11.4659,partial,partial,partial_outage,events before 2025-10-08 17:00 UTC only
+2025-10,playground,merged,body_signature,sig_any_specific,78151,802979,9.73263,partial,partial,partial_outage,events before 2025-10-08 17:00 UTC only
+2025-10,playground,merged,body_signature,sig_claude_ai_code_link,625,802979,0.0778352,partial,partial,partial_outage,events before 2025-10-08 17:00 UTC only
+2025-10,playground,merged,body_signature,sig_claude_code_mention,5758,802979,0.71708,partial,partial,partial_outage,events before 2025-10-08 17:00 UTC only
+2025-10,playground,merged,body_signature,sig_coauthored_by_claude,767,802979,0.0955193,partial,partial,partial_outage,events before 2025-10-08 17:00 UTC only
+2025-10,playground,merged,body_signature,sig_codex_link,66014,802979,8.22114,partial,partial,partial_outage,events before 2025-10-08 17:00 UTC only
+2025-10,playground,merged,body_signature,sig_copilot_mention,14018,802979,1.74575,partial,partial,partial_outage,events before 2025-10-08 17:00 UTC only
+2025-10,playground,merged,body_signature,sig_cursor_agent_link,3793,802979,0.472366,partial,partial,partial_outage,events before 2025-10-08 17:00 UTC only
+2025-10,playground,merged,body_signature,sig_devin_session_link,396,802979,0.0493164,partial,partial,partial_outage,events before 2025-10-08 17:00 UTC only
+2025-10,playground,merged,body_signature,sig_generated_with_claude_code,5010,802979,0.623927,partial,partial,partial_outage,events before 2025-10-08 17:00 UTC only
+2025-10,playground,merged,body_signature,sig_jules_link,2162,802979,0.269247,partial,partial,partial_outage,events before 2025-10-08 17:00 UTC only
+2025-10,playground,opened,body_signature,sig_any_incl_copilot,119427,1184956,10.0786,partial,partial,partial_outage,events before 2025-10-08 17:00 UTC only
+2025-10,playground,opened,body_signature,sig_any_specific,96542,1184956,8.14731,partial,partial,partial_outage,events before 2025-10-08 17:00 UTC only
+2025-10,playground,opened,body_signature,sig_claude_ai_code_link,627,1184956,0.0529134,partial,partial,partial_outage,events before 2025-10-08 17:00 UTC only
+2025-10,playground,opened,body_signature,sig_claude_code_mention,7397,1184956,0.624243,partial,partial,partial_outage,events before 2025-10-08 17:00 UTC only
+2025-10,playground,opened,body_signature,sig_coauthored_by_claude,956,1184956,0.0806781,partial,partial,partial_outage,events before 2025-10-08 17:00 UTC only
+2025-10,playground,opened,body_signature,sig_codex_link,78003,1184956,6.58278,partial,partial,partial_outage,events before 2025-10-08 17:00 UTC only
+2025-10,playground,opened,body_signature,sig_copilot_mention,23016,1184956,1.94235,partial,partial,partial_outage,events before 2025-10-08 17:00 UTC only
+2025-10,playground,opened,body_signature,sig_cursor_agent_link,7579,1184956,0.639602,partial,partial,partial_outage,events before 2025-10-08 17:00 UTC only
+2025-10,playground,opened,body_signature,sig_devin_session_link,688,1184956,0.0580612,partial,partial,partial_outage,events before 2025-10-08 17:00 UTC only
+2025-10,playground,opened,body_signature,sig_generated_with_claude_code,6050,1184956,0.510567,partial,partial,partial_outage,events before 2025-10-08 17:00 UTC only
+2025-10,playground,opened,body_signature,sig_jules_link,2857,1184956,0.241106,partial,partial,partial_outage,events before 2025-10-08 17:00 UTC only
+2025-10,playground,opened,head_branch_prefix,branch_any_agent_prefix,280411,3070806,9.13151,partial,partial,partial_outage,branch names survive the payload break
+2025-10,playground,opened,head_branch_prefix,branch_claude,15372,3070806,0.500585,partial,partial,partial_outage,branch names survive the payload break
+2025-10,playground,opened,head_branch_prefix,branch_codex,192870,3070806,6.28076,partial,partial,partial_outage,branch names survive the payload break
+2025-10,playground,opened,head_branch_prefix,branch_copilot,50220,3070806,1.6354,partial,partial,partial_outage,branch names survive the payload break
+2025-10,playground,opened,head_branch_prefix,branch_cursor,19830,3070806,0.645759,partial,partial,partial_outage,branch names survive the payload break
+2025-10,playground,opened,head_branch_prefix,branch_devin,2119,3070806,0.0690047,partial,partial,partial_outage,branch names survive the payload break
+2025-10,playground,opened,union,ai_agent_login_or_agent_branch,295728,3070806,9.63031,partial,partial,partial_outage,AI-agent login (setup PRs excluded) OR head branch claude/ codex/ copilot/ cursor/ devin/
+2025-10,playground,opened,union,ai_agent_login_or_branch_or_body_signature,117194,1184956,9.89016,partial,partial,partial_outage,adds body signatures (sig_any_specific); events before 2025-10-08 17:00 UTC only
+2025-11,playground,opened,head_branch_prefix,branch_any_agent_prefix,365205,3147865,11.6017,no,full,ok,branch names survive the payload break
+2025-11,playground,opened,head_branch_prefix,branch_claude,140771,3147865,4.47195,no,full,ok,branch names survive the payload break
+2025-11,playground,opened,head_branch_prefix,branch_codex,131893,3147865,4.18992,no,full,ok,branch names survive the payload break
+2025-11,playground,opened,head_branch_prefix,branch_copilot,79464,3147865,2.52438,no,full,ok,branch names survive the payload break
+2025-11,playground,opened,head_branch_prefix,branch_cursor,10458,3147865,0.332225,no,full,ok,branch names survive the payload break
+2025-11,playground,opened,head_branch_prefix,branch_devin,2619,3147865,0.0831992,no,full,ok,branch names survive the payload break
+2025-11,playground,opened,union,ai_agent_login_or_agent_branch,392489,3147865,12.4684,no,full,ok,AI-agent login (setup PRs excluded) OR head branch claude/ codex/ copilot/ cursor/ devin/
+2025-12,playground,opened,head_branch_prefix,branch_any_agent_prefix,303447,3176586,9.55261,no,full,ok,branch names survive the payload break
+2025-12,playground,opened,head_branch_prefix,branch_claude,93450,3176586,2.94184,no,full,ok,branch names survive the payload break
+2025-12,playground,opened,head_branch_prefix,branch_codex,113145,3176586,3.56184,no,full,ok,branch names survive the payload break
+2025-12,playground,opened,head_branch_prefix,branch_copilot,83511,3176586,2.62895,no,full,ok,branch names survive the payload break
+2025-12,playground,opened,head_branch_prefix,branch_cursor,10162,3176586,0.319903,no,full,ok,branch names survive the payload break
+2025-12,playground,opened,head_branch_prefix,branch_devin,3179,3176586,0.100076,no,full,ok,branch names survive the payload break
+2025-12,playground,opened,union,ai_agent_login_or_agent_branch,345927,3176586,10.8899,no,full,ok,AI-agent login (setup PRs excluded) OR head branch claude/ codex/ copilot/ cursor/ devin/
+2026-01,playground,opened,head_branch_prefix,branch_any_agent_prefix,297527,3182595,9.34857,no,full,ok,branch names survive the payload break
+2026-01,playground,opened,head_branch_prefix,branch_claude,98646,3182595,3.09955,no,full,ok,branch names survive the payload break
+2026-01,playground,opened,head_branch_prefix,branch_codex,106145,3182595,3.33517,no,full,ok,branch names survive the payload break
+2026-01,playground,opened,head_branch_prefix,branch_copilot,82074,3182595,2.57884,no,full,ok,branch names survive the payload break
+2026-01,playground,opened,head_branch_prefix,branch_cursor,7374,3182595,0.231698,no,full,ok,branch names survive the payload break
+2026-01,playground,opened,head_branch_prefix,branch_devin,3288,3182595,0.103312,no,full,ok,branch names survive the payload break
+2026-01,playground,opened,union,ai_agent_login_or_agent_branch,348391,3182595,10.9468,no,full,ok,AI-agent login (setup PRs excluded) OR head branch claude/ codex/ copilot/ cursor/ devin/
+2026-02,playground,opened,head_branch_prefix,branch_any_agent_prefix,344333,2930569,11.7497,no,full,ok,branch names survive the payload break
+2026-02,playground,opened,head_branch_prefix,branch_claude,100875,2930569,3.44216,no,full,ok,branch names survive the payload break
+2026-02,playground,opened,head_branch_prefix,branch_codex,149747,2930569,5.10983,no,full,ok,branch names survive the payload break
+2026-02,playground,opened,head_branch_prefix,branch_copilot,84138,2930569,2.87105,no,full,ok,branch names survive the payload break
+2026-02,playground,opened,head_branch_prefix,branch_cursor,6298,2930569,0.214907,no,full,ok,branch names survive the payload break
+2026-02,playground,opened,head_branch_prefix,branch_devin,3275,2930569,0.111753,no,full,ok,branch names survive the payload break
+2026-02,playground,opened,union,ai_agent_login_or_agent_branch,351381,2930569,11.9902,no,full,ok,AI-agent login (setup PRs excluded) OR head branch claude/ codex/ copilot/ cursor/ devin/
+2026-03,playground,opened,head_branch_prefix,branch_any_agent_prefix,280566,2248419,12.4784,no,full,decaying,branch names survive the payload break
+2026-03,playground,opened,head_branch_prefix,branch_claude,101254,2248419,4.50334,no,full,decaying,branch names survive the payload break
+2026-03,playground,opened,head_branch_prefix,branch_codex,102841,2248419,4.57393,no,full,decaying,branch names survive the payload break
+2026-03,playground,opened,head_branch_prefix,branch_copilot,67636,2248419,3.00816,no,full,decaying,branch names survive the payload break
+2026-03,playground,opened,head_branch_prefix,branch_cursor,5681,2248419,0.252666,no,full,decaying,branch names survive the payload break
+2026-03,playground,opened,head_branch_prefix,branch_devin,3154,2248419,0.140276,no,full,decaying,branch names survive the payload break
+2026-03,playground,opened,union,ai_agent_login_or_agent_branch,285585,2248419,12.7016,no,full,decaying,AI-agent login (setup PRs excluded) OR head branch claude/ codex/ copilot/ cursor/ devin/
+2026-04,playground,opened,head_branch_prefix,branch_any_agent_prefix,223193,1970848,11.3247,no,full,decaying,branch names survive the payload break
+2026-04,playground,opened,head_branch_prefix,branch_claude,81775,1970848,4.14923,no,full,decaying,branch names survive the payload break
+2026-04,playground,opened,head_branch_prefix,branch_codex,82609,1970848,4.19155,no,full,decaying,branch names survive the payload break
+2026-04,playground,opened,head_branch_prefix,branch_copilot,46681,1970848,2.36857,no,full,decaying,branch names survive the payload break
+2026-04,playground,opened,head_branch_prefix,branch_cursor,6554,1970848,0.332547,no,full,decaying,branch names survive the payload break
+2026-04,playground,opened,head_branch_prefix,branch_devin,5574,1970848,0.282822,no,full,decaying,branch names survive the payload break
+2026-04,playground,opened,union,ai_agent_login_or_agent_branch,227591,1970848,11.5479,no,full,decaying,AI-agent login (setup PRs excluded) OR head branch claude/ codex/ copilot/ cursor/ devin/
+2026-05,playground,opened,head_branch_prefix,branch_any_agent_prefix,164245,1311652,12.522,no,full,decaying,branch names survive the payload break
+2026-05,playground,opened,head_branch_prefix,branch_claude,75194,1311652,5.73277,no,full,decaying,branch names survive the payload break
+2026-05,playground,opened,head_branch_prefix,branch_codex,60756,1311652,4.63202,no,full,decaying,branch names survive the payload break
+2026-05,playground,opened,head_branch_prefix,branch_copilot,15809,1311652,1.20527,no,full,decaying,branch names survive the payload break
+2026-05,playground,opened,head_branch_prefix,branch_cursor,7327,1311652,0.558609,no,full,decaying,branch names survive the payload break
+2026-05,playground,opened,head_branch_prefix,branch_devin,5159,1311652,0.393321,no,full,decaying,branch names survive the payload break
+2026-05,playground,opened,union,ai_agent_login_or_agent_branch,167695,1311652,12.785,no,full,decaying,AI-agent login (setup PRs excluded) OR head branch claude/ codex/ copilot/ cursor/ devin/
+2026-06,playground,opened,head_branch_prefix,branch_any_agent_prefix,54588,463726,11.7716,no,minor_gaps,decaying,branch names survive the payload break
+2026-06,playground,opened,head_branch_prefix,branch_claude,30029,463726,6.47559,no,minor_gaps,decaying,branch names survive the payload break
+2026-06,playground,opened,head_branch_prefix,branch_codex,17770,463726,3.832,no,minor_gaps,decaying,branch names survive the payload break
+2026-06,playground,opened,head_branch_prefix,branch_copilot,2166,463726,0.467086,no,minor_gaps,decaying,branch names survive the payload break
+2026-06,playground,opened,head_branch_prefix,branch_cursor,3333,463726,0.718743,no,minor_gaps,decaying,branch names survive the payload break
+2026-06,playground,opened,head_branch_prefix,branch_devin,1290,463726,0.278182,no,minor_gaps,decaying,branch names survive the payload break
+2026-06,playground,opened,union,ai_agent_login_or_agent_branch,55710,463726,12.0136,no,minor_gaps,decaying,AI-agent login (setup PRs excluded) OR head branch claude/ codex/ copilot/ cursor/ devin/

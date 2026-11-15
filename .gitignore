@@ -6,3 +6,5 @@ dist/
 # generated from notebooks/ by scripts/nb2md.mjs
 src/generated/
 public/notebooks/
+
+__pycache__/

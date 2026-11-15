@@ -22,6 +22,13 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
     links={work.links}
   />
 
+  {posts.length > 0 && (
+    <section class="section" id="writing">
+      <h2>writing</h2>
+      <PostList posts={posts} />
+    </section>
+  )}
+
   <section class="section" id="experience">
     <h2>experience</h2>
     <ol class="rows">
@@ -79,13 +86,6 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
       ))}
     </ul>
   </section>
-
-  {posts.length > 0 && (
-    <section class="section" id="writing">
-      <h2>writing</h2>
-      <PostList posts={posts} />
-    </section>
-  )}
 
   <Heatmap id="visit" title="visit" />
 </Base>

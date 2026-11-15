@@ -9,9 +9,10 @@ interface Props {
   tab?: Tab;
   isTabHome?: boolean;
   indexable?: boolean;
+  image?: string;
 }
 
-const { title, description = profile.description, tab, isTabHome = false, indexable = true } = Astro.props;
+const { title, description = profile.description, tab, isTabHome = false, indexable = true, image = profile.work.photo.src } = Astro.props;
 const pageTitle = title ? `${title} · ${profile.name}` : profile.name;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const current = (t: Tab) => (t === tab ? (isTabHome ? 'page' : 'true') : undefined);
@@ -40,7 +41,9 @@ const csp = [
     <meta property="og:title" content={pageTitle} />
     <meta property="og:description" content={description} />
     {indexable && <meta property="og:url" content={canonical} />}
-    <meta property="og:image" content={new URL(profile.work.photo.src, Astro.site)} />
+    <meta property="og:image" content={new URL(image, Astro.site)} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="alternate" type="application/rss+xml" title={profile.name} href="/rss.xml" />
   </head>
   <body>
     <div class="wrap">
