@@ -4,6 +4,7 @@ date: 2026-11-15
 tab: work
 summary: What eighteen years of GitHub data say about AI and code, where the jump really is, and what nobody can measure yet.
 image: /posts/github-after-ai/og.png
+tags: [ai, github, data engineering]
 ---
 
 I wanted to know how much AI has changed the way code gets written. GitHub is the closest thing we have to a public record of software, so I collected its numbers from 2008 to 2026, measured public activity from the GH Archive event log, and read the studies on AI and code quality. Here is what the numbers show, and where they stop.

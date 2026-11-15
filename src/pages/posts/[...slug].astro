@@ -12,7 +12,7 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
-const back = post.data.tab === 'work' ? '/#writing' : '/notwork/#writing';
+const back = post.data.tab === 'work' ? '/#blog' : '/notwork/#blog';
 ---
 
 <Base title={post.data.title} description={post.data.summary} tab={post.data.tab} image={post.data.image}>
