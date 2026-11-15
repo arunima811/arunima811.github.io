@@ -15,7 +15,8 @@ interface Props {
 
 const { greeting, aka, paragraphs, photo, now, tags = [], links: allLinks } = Astro.props;
 // A local file link (e.g. /resume.pdf) is shown only once the file exists in public/.
-const links = allLinks.filter(({ href }) => !href.startsWith('/') || existsSync(join(process.cwd(), 'public', href)));
+const isLocalFile = (href: string) => href.startsWith('/') && /\.[a-z0-9]+$/i.test(href);
+const links = allLinks.filter(({ href }) => !isLocalFile(href) || existsSync(join(process.cwd(), 'public', href)));
 ---
 
 <section class="intro">

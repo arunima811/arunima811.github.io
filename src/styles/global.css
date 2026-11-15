@@ -165,7 +165,8 @@ img {
   padding: 1.75rem 0 0.5rem;
 }
 
-.section > h2 {
+.section > h2,
+.section-label {
   font-family: var(--mono);
   font-size: 0.82rem;
   font-weight: 500;

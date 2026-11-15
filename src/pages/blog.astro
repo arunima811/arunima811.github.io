@@ -1,0 +1,14 @@
+---
+import Base from '../layouts/Base.astro';
+import PostList from '../components/PostList.astro';
+import { getPosts } from '../lib/posts';
+
+const posts = await getPosts();
+---
+
+<Base title="Blog" description="Posts by Arunima Shukla on data platforms, AI and engineering." tab="work">
+  <section class="section">
+    <h1 class="section-label">blog</h1>
+    <PostList posts={posts} />
+  </section>
+</Base>

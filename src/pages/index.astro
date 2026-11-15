@@ -2,13 +2,10 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import Intro from '../components/Intro.astro';
-import PostList from '../components/PostList.astro';
 import Heatmap from '../components/Heatmap.astro';
 import { profile } from '../data/profile';
-import { getPosts } from '../lib/posts';
 
 const { work, timeline, sideProjects, recognition } = profile;
-const posts = await getPosts('work');
 const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
 ---
 
@@ -21,13 +18,6 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
     now={work.now}
     links={work.links}
   />
-
-  {posts.length > 0 && (
-    <section class="section" id="blog">
-      <h2>blog</h2>
-      <PostList posts={posts} />
-    </section>
-  )}
 
   <section class="section" id="experience">
     <h2>experience</h2>

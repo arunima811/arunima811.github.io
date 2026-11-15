@@ -47,6 +47,7 @@ export const profile = {
       { label: 'LinkedIn', href: 'https://www.linkedin.com/in/arunima-shukla-pg/' },
       { label: 'Email', href: 'mailto:shukla.arunima0811@gmail.com' },
       { label: 'Résumé (PDF)', href: '/resume.pdf' },
+      { label: 'Blog', href: '/blog/' },
     ] satisfies Link[],
   },
 
