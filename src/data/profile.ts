@@ -172,10 +172,10 @@ export const profile = {
     photo: { src: '/me-life.jpg', alt: 'Arunima Shukla holding a camera by a stream' } satisfies Photo,
     intro: [
       "Away from data pipelines, I'm a curious generalist. I take photos, I write poetry about life and the technical ideas I can't stop thinking about, and I'm learning to surf.",
-      "Long before code, I was a kids' show anchor on All India Radio (2008–2012). In college I drew concept art for a small gaming startup, debated, danced, and started a campus cycle-rental service.",
+      "Long before code, I was a kids' show anchor on All India Radio (2008–2012). In college I tinkered with IoT and robotics: I built a home-light automation system on Arduino and Atmel boards, prototyped IoT keyless locks at the university's Atal incubation centre, and wired up a light modulator on an Arduino. I also drew concept art for a small gaming startup, debated, danced, and started a campus cycle-rental service.",
       'I run on good coffee, books, friends and a bit of adventure.',
     ],
-    interests: ['photography', 'poetry', 'learning to surf', 'coffee', 'books', 'debating', 'dance', 'art'],
+    interests: ['photography', 'poetry', 'learning to surf', 'robotics & IoT', 'coffee', 'books', 'debating', 'dance', 'art'],
     links: [{ label: 'X (Twitter)', href: 'https://x.com/Arunima8Shukla' }] satisfies Link[],
   },
 };
