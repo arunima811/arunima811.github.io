@@ -22,9 +22,9 @@ No GitHub token or GitHub API was used, and nothing was written to any remote se
 
 \*2025 commits, merges, repos and sizes use 3 sample hours (Feb 15 Sat, May 15 Thu, Aug 15 Fri). The Nov 15 file already has the reduced payload. Push and PR-opened counts for 2025 use all 4 hours.
 
-## Read this first: corrections to the brief
+## Read this first: corrections to the original plan
 
-- **The playground is not continuous.** Its minimum and maximum timestamps are 2023-01-13 13:00 and 2026-07-02 22:59, as stated in the brief. But it has no rows from 2024-06-05 09:00 to 2025-09-25 21:59 UTC, a 477-day hole.
+- **The playground is not continuous.** Its minimum and maximum timestamps are 2023-01-13 13:00 and 2026-07-02 22:59, as stated in the original plan. But it has no rows from 2024-06-05 09:00 to 2025-09-25 21:59 UTC, a 477-day hole.
   - Raw GH Archive does have those hours. Source B samples were therefore extended to 2023–2025, and the gap was sampled for the AI signatures.
   - As a result, A1 has no full year for 2024 or 2025, and the validation could not use true 2024 or 2025 totals. Substitute windows are used instead (see Validation).
 - **The 2025 field break is one event.** At 2025-10-08 17:00 UTC GitHub's Events API payload shrank, and this is visible in the raw files as well as the playground.
@@ -85,7 +85,7 @@ Normal baselines, which are not breaks:
   - `new_repos`: CreateEvents with `ref_type='repository'`.
 - PR columns:
   - `prs_opened`: PRs opened.
-  - `prs_merged`: the brief's definition (closed with `merged=1`). It is blank from 2024-01.
+  - `prs_merged`: the original plan's definition (closed with `merged=1`). It is blank from 2024-01.
   - `prs_merged_fixed`: closed with `merged_at` set.
   - `prs_merged_action`: `action='merged'`, only for 2025-12..2026-02.
 - Merged-PR size columns, all using the `merged_at` definition:

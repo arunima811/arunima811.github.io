@@ -9,7 +9,7 @@ export async function GET({ site }: APIContext) {
     .map((post) => {
       const url = new URL(postHref(post), site).href;
       const summary = post.data.summary ? `<description>${xml(post.data.summary)}</description>` : '';
-      return `<item><title>${xml(post.data.title)}</title><link>${url}</link><guid>${url}</guid><pubDate>${post.data.date.toUTCString()}</pubDate>${summary}</item>`;
+      return `<item><title>${xml(post.data.title)}</title><link>${xml(url)}</link><guid>${xml(url)}</guid><pubDate>${post.data.date.toUTCString()}</pubDate>${summary}</item>`;
     })
     .join('');
   const body = `<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"><channel><title>${xml(profile.name)}</title><link>${site}</link><description>${xml(profile.description)}</description>${items}</channel></rss>`;

@@ -101,13 +101,13 @@ def repositories_table():
 def commits_chart():
     pts = [{"x": str(r["year"]), "value": r["commits"], "color": BLUE,
             "tip": f"{r['year']}: about {compact(r['commits'])} public commits ({r['hours']} sampled hours)"} for r in yearly()]
-    return column_chart(pts, label="Estimated public commits per year, 2015 to 2025", band_from="2022",
+    return column_chart(pts, label="Estimated public commits per year (at most 1,000 per push), 2015 to 2025", band_from="2022",
                         band_label="AI coding tools", value_labels=("2015", "2025"))
 
 
 def yearly_table():
     rows = [[r["year"], compact(r["commits"]), compact(r["prs_merged"]), compact(r["new_repos"]), int(r["median_additions"])] for r in yearly()]
-    return _table(["Year", "Public commits", "PRs merged", "New repos", "Median lines added per merged PR"], rows)
+    return _table(["Year", "Public commits (at most 1,000 per push)", "PRs merged", "New repos", "Median lines added per merged PR"], rows)
 
 
 def pr_size_chart():
