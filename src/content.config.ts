@@ -9,7 +9,10 @@ const postSchema = z.object({
   date: z.coerce.date(),
   tab: z.enum(['work', 'notwork']),
   summary: z.string().optional(),
-  tags: z.array(z.string()).default([]),
+  tags: z
+    .array(z.string())
+    .refine((tags) => new Set(tags).size === tags.length, 'Duplicate tag')
+    .default([]),
   draft: z.boolean().default(false),
   external: webUrl.optional(),
   image: z.string().startsWith('/').optional(),

@@ -1,0 +1,21 @@
+---
+import { tagHref, type Tag } from '../lib/posts';
+
+interface Props {
+  tags: Tag[];
+  active?: string;
+}
+
+const { tags, active } = Astro.props;
+---
+
+{tags.length > 0 && (
+  <nav class="tag-filter" aria-label="Filter posts by tag">
+    <a href="/blog/" aria-current={active ? undefined : 'page'}>all</a>
+    {tags.map(({ name, slug, count }) => (
+      <a href={tagHref(name)} aria-current={slug === active ? 'page' : undefined}>
+        {name} <span class="count">{count}</span>
+      </a>
+    ))}
+  </nav>
+)}

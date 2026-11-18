@@ -233,6 +233,39 @@ img {
   margin-top: 0.3rem;
 }
 
+.tags a:hover {
+  color: var(--text);
+}
+
+.tag-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.1rem;
+  margin: 0 0 1rem;
+  font-family: var(--mono);
+  font-size: 0.82rem;
+}
+
+.tag-filter a {
+  color: var(--muted);
+  text-decoration: none;
+  padding-bottom: 0.15rem;
+  border-bottom: 2px solid transparent;
+}
+
+.tag-filter a:hover {
+  color: var(--text);
+}
+
+.tag-filter a[aria-current] {
+  color: var(--text);
+  border-bottom-color: var(--text);
+}
+
+.tag-filter .count {
+  color: var(--muted);
+}
+
 .compact > li {
   padding: 0.45rem 0;
   border-top: none;

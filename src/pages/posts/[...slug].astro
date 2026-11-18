@@ -1,6 +1,7 @@
 ---
 import { render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import TagLinks from '../../components/TagLinks.astro';
 import { formatDate, getPosts } from '../../lib/posts';
 
 export async function getStaticPaths() {
@@ -22,6 +23,7 @@ const { Content } = await render(post);
       <time datetime={post.data.date.toISOString()}>{formatDate(post.data.date, 'long')}</time>
       {post.data.draft && <span class="badge">draft</span>}
     </p>
+    <TagLinks tags={post.data.tags} />
     <Content />
   </article>
 </Base>

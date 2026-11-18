@@ -1,4 +1,5 @@
 ---
+import TagLinks from './TagLinks.astro';
 import { formatDate, postHref, type Post } from '../lib/posts';
 
 interface Props {
@@ -19,7 +20,7 @@ const { posts } = Astro.props;
           {post.data.draft && <span class="badge">draft</span>}
         </h3>
         {post.data.summary && <p>{post.data.summary}</p>}
-        {post.data.tags.length > 0 && <div class="tags">{post.data.tags.join(' · ')}</div>}
+        <TagLinks tags={post.data.tags} />
       </div>
     </li>
   ))}

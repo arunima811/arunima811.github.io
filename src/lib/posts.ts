@@ -26,6 +26,35 @@ export async function getPosts(tab?: Tab): Promise<Post[]> {
 
 export const postHref = (post: Post) => post.data.external ?? `/posts/${post.id}/`;
 
+export const tagSlug = (tag: string) =>
+  tag
+    .toLowerCase()
+    .trim()
+    .normalize('NFKD')
+    .replace(/[\u0300-\u036f]/g, '')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+
+export const tagHref = (tag: string) => `/blog/tags/${tagSlug(tag)}/`;
+
+export interface Tag {
+  name: string;
+  slug: string;
+  count: number;
+}
+
+export function getTags(posts: Post[]): Tag[] {
+  const bySlug = new Map<string, Tag>();
+  for (const name of posts.flatMap((post) => post.data.tags)) {
+    const slug = tagSlug(name);
+    if (!slug) throw new Error(`Tag "${name}" has no ASCII letters or digits`);
+    const tag = bySlug.get(slug);
+    if (tag && tag.name !== name) throw new Error(`Tags "${tag.name}" and "${name}" share the slug "${slug}"`);
+    bySlug.set(slug, { name, slug, count: (tag?.count ?? 0) + 1 });
+  }
+  return [...bySlug.values()].sort((a, b) => b.count - a.count || a.name.localeCompare(b.name));
+}
+
 export const formatDate = (date: Date, style: 'short' | 'long' = 'short') =>
   date.toLocaleDateString('en-US', {
     timeZone: 'UTC',

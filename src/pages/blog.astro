@@ -1,7 +1,8 @@
 ---
 import Base from '../layouts/Base.astro';
 import PostList from '../components/PostList.astro';
-import { getPosts } from '../lib/posts';
+import TagFilter from '../components/TagFilter.astro';
+import { getPosts, getTags } from '../lib/posts';
 
 const posts = await getPosts();
 ---
@@ -9,6 +10,7 @@ const posts = await getPosts();
 <Base title="Blog" description="Posts by Arunima Shukla on data platforms, AI and engineering." tab="work">
   <section class="section">
     <h1 class="section-label">blog</h1>
+    <TagFilter tags={getTags(posts)} />
     <PostList posts={posts} />
   </section>
 </Base>
