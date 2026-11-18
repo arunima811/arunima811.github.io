@@ -36,6 +36,7 @@ jobs:
         run: echo "::warning::Contribution graph refresh failed; deploying the committed snapshot."
       - run: npm run check
       - run: npm run build
+      - run: npm run links
       - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
         with:
           path: dist
