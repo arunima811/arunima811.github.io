@@ -1,11 +1,12 @@
 """Data and charts for the post "GitHub After AI". Run from the folder that holds this file."""
 import csv
-from collections import defaultdict
+from html import escape
 from pathlib import Path
 
-from charts import BLUE, BLUE_LIGHT, column_chart, compact, hbar_chart, time_line_chart
+from charts import AQUA, BLUE, BLUE_LIGHT, GRAY, ORANGE, column_chart, compact, hbar_chart, stacked_columns, time_line_chart
 
 DATA = Path(__file__).parent / "data"
+MONTH_NAMES = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split()
 
 # GitHub's own published milestones: (decimal year, millions, as of, source key). See the post's sources list.
 DEVELOPERS = [
@@ -24,6 +25,8 @@ REPOSITORIES = [
     (2017.75, 67, "2017", "octo-2017"), (2018.85, 100, "Nov 2018", "blog-100m-repos"),
     (2023.75, 420, "2023", "octo-2023"), (2024.75, 518, "2024", "octo-2024"), (2025.66, 630, "Aug 2025", "octo-2025"),
 ]
+LAST_GH_ARCHIVE_YEAR = 2024
+AGENT_MONTHS_FROM = "2025-01"
 
 
 def _rows(name):
@@ -31,13 +34,27 @@ def _rows(name):
         return list(csv.DictReader(f))
 
 
+def _month_label(month):
+    return f"{MONTH_NAMES[int(month[5:7]) - 1]} {month[:4]}"
+
+
+def _pct(v):
+    return "<0.001%" if 0 < v < 0.001 else f"{v:.3g}%"
+
+
+def _table(headers, rows):
+    head = "".join(f"<th>{escape(str(h))}</th>" for h in headers)
+    body = "".join("<tr>" + "".join(f"<td>{escape(str(c))}</td>" for c in row) + "</tr>" for row in rows)
+    return f"<details><summary>Data table</summary><table><thead><tr>{head}</tr></thead><tbody>{body}</tbody></table></details>"
+
+
+# GH Archive sampled hours, 2015 onward (data/sampled_yearly.csv).
 def yearly():
     return [
         {
             "year": int(r["year"]),
             "commits": float(r["est_annual_adj_commits_cap1000"]),
             "prs_merged": float(r["est_annual_adj_prs_merged"]),
-            "new_repos": float(r["est_annual_adj_new_repos"]),
             "median_additions": float(r["pooled_median_additions"]),
             "hours": int(r["n_hours_commits_cap1000"]),
         }
@@ -45,37 +62,61 @@ def yearly():
     ]
 
 
-def agent_share_monthly():
-    """Share of opened PRs with any AI-agent signal. Full-data months use the exact union (agent login or agent
-    branch, plus body signatures before the Oct 2025 break); archive-gap months use 2 sampled hours and take the
-    largest single signal, a lower bound."""
-    in_full_data = lambda m: m <= "2024-05" or m >= "2025-10"
-    exact = {r["month"]: float(r["ai_login_or_branch_share_pct"]) for r in _rows("agent_prs_monthly.csv")
-             if r["ai_login_or_branch_share_pct"] and in_full_data(r["month"])}
-    sampled = defaultdict(float)
-    for r in _rows("signature_gap_samples.csv"):
-        if r["population"] == "opened" and r["signal"] in ("all_ai_agent_logins", "branch_any_agent_prefix", "sig_any_specific"):
-            sampled[r["month"]] = max(sampled[r["month"]], float(r["share_pct"] or 0))
-    months = sorted(set(exact) | set(sampled))
-    return [{"month": m, "share": exact.get(m, sampled.get(m, 0.0)), "sampled": m not in exact} for m in months]
+# GitHub Search API counts, one row per month from 2022-01 (data/api/monthly.csv).
+def api_monthly():
+    return [{k: (v if k == "month" or k.endswith("_flag") else int(v) if v else None) for k, v in r.items()}
+            for r in _rows("api/monthly.csv")]
 
 
-def agent_tools():
-    months = {"2025-11", "2025-12", "2026-01", "2026-02"}
-    branch = defaultdict(int)
-    for r in _rows("signature_prs_monthly.csv"):
-        if r["population"] == "opened" and r["month"] in months and r["signal_type"] == "head_branch_prefix":
-            branch[r["signal"]] += int(float(r["matched_prs"] or 0))
-    jules = sum(int(float(r["google_jules"] or 0)) for r in _rows("agent_prs_monthly.csv") if r["month"] in months)
-    items = [("Codex", branch["branch_codex"]), ("Claude", branch["branch_claude"]), ("Copilot", branch["branch_copilot"]),
-             ("Jules", jules), ("Cursor", branch["branch_cursor"]), ("Devin", branch["branch_devin"])]
-    return sorted(items, key=lambda kv: -kv[1])
+def api_yearly():
+    """Merged PRs per month (average) and new repos per year; the last year is partial, compared with the same months a year before."""
+    months = api_monthly()
+    by_year = {}
+    for m in months:
+        by_year.setdefault(int(m["month"][:4]), []).append(m)
+    out = []
+    for year, ms in sorted(by_year.items()):
+        prev = [m for m in by_year.get(year - 1, []) if m["month"][5:] <= ms[-1]["month"][5:]]
+        merged, repos = sum(m["merged_prs"] for m in ms), sum(m["new_repos"] for m in ms)
+        out.append({
+            "year": year, "months": len(ms), "last": ms[-1]["month"],
+            "merged_per_month": merged / len(ms), "new_repos": repos,
+            "merged_change": merged / sum(m["merged_prs"] for m in prev) - 1 if prev else None,
+            "repos_change": repos / sum(m["new_repos"] for m in prev) - 1 if prev else None,
+        })
+    return out
 
 
-def _table(headers, rows):
-    head = "".join(f"<th>{h}</th>" for h in headers)
-    body = "".join("<tr>" + "".join(f"<td>{c}</td>" for c in row) + "</tr>" for row in rows)
-    return f"<details><summary>Data table</summary><table><thead><tr>{head}</tr></thead><tbody>{body}</tbody></table></details>"
+def agent_signals():
+    """Share of opened PRs carrying each AI-tool signal. Codex is the larger of its body link and `codex/` branches
+    (the link stopped in Nov 2025); Cursor is the larger of its two body links, which mostly overlap."""
+    out = []
+    for m in api_monthly():
+        if m["month"] < AGENT_MONTHS_FROM:
+            continue
+        counts = {
+            "Claude Code": m["claude_code"],
+            "Codex": max(m["codex"], m["branch_codex"] or 0),
+            "Copilot agent": m["copilot_agent"],
+            "Cursor": max(m["cursor_agents"], m["cursor_background_agent"]),
+            "Devin and Jules": m["devin"] + m["jules"],
+        }
+        out.append({"month": m["month"], "opened": m["opened_prs"], "counts": counts,
+                    "shares": {k: 100 * v / m["opened_prs"] for k, v in counts.items()},
+                    "total_share": 100 * sum(counts.values()) / m["opened_prs"]})
+    return out
+
+
+def validation():
+    rows = []
+    for r in _rows("api/validation_vs_gharchive.csv"):
+        if " " in r["month"]:
+            continue
+        if r["ratio_merged_gha_over_search"]:
+            rows.append((r["month"], "merged", int(r["gha_prs_merged_fixed"]), int(r["search_merged_prs"]), float(r["ratio_merged_gha_over_search"])))
+        else:
+            rows.append((r["month"], "opened", int(r["gha_prs_opened"]), int(r["search_opened_prs"]), float(r["ratio_opened_gha_over_search"])))
+    return rows
 
 
 def developers_chart():
@@ -99,68 +140,90 @@ def repositories_table():
 
 
 def commits_chart():
+    rows = [r for r in yearly() if r["year"] <= LAST_GH_ARCHIVE_YEAR]
     pts = [{"x": str(r["year"]), "value": r["commits"], "color": BLUE,
-            "tip": f"{r['year']}: about {compact(r['commits'])} public commits ({r['hours']} sampled hours)"} for r in yearly()]
-    return column_chart(pts, label="Estimated public commits per year (at most 1,000 per push), 2015 to 2025", band_from="2022",
-                        band_label="AI coding tools", value_labels=("2015", "2025"))
+            "tip": f"{r['year']}: about {compact(r['commits'])} public commits ({r['hours']} sampled hours)"} for r in rows]
+    return column_chart(pts, label=f"Estimated public commits per year (at most 1,000 per push), 2015 to {LAST_GH_ARCHIVE_YEAR}",
+                        band_from="2022", band_label="AI coding tools", value_labels=("2015", str(LAST_GH_ARCHIVE_YEAR)))
 
 
-def yearly_table():
-    rows = [[r["year"], compact(r["commits"]), compact(r["prs_merged"]), compact(r["new_repos"]), int(r["median_additions"])] for r in yearly()]
-    return _table(["Year", "Public commits (at most 1,000 per push)", "PRs merged", "New repos", "Median lines added per merged PR"], rows)
+def commits_table():
+    search = {y["year"]: y["merged_per_month"] * y["months"] for y in api_yearly()}
+    rows = [[r["year"], compact(r["commits"]), compact(r["prs_merged"]), compact(search[r["year"]]) if r["year"] in search else ""]
+            for r in yearly() if r["year"] <= LAST_GH_ARCHIVE_YEAR]
+    return _table(["Year", "Public commits (at most 1,000 per push)", "Merged PRs (GH Archive)", "Merged PRs (Search API)"], rows)
 
 
-def pr_size_chart():
-    pts = [{"x": str(r["year"]), "value": r["median_additions"], "color": BLUE,
-            "tip": f"{r['year']}: median merged PR adds {int(r['median_additions'])} lines"} for r in yearly()]
-    return column_chart(pts, label="Median lines added per merged public PR, 2015 to 2025", fmt=lambda v: f"{v:g}",
-                        band_from="2022", band_label="AI coding tools", value_labels=("2015", "2024", "2025"))
+def merged_monthly_chart():
+    pts = [{"x": m["month"], "tick": m["month"][:4] if m["month"].endswith("-01") else "", "value": m["merged_prs"], "color": BLUE,
+            "tip": f"{_month_label(m['month'])}: {m['merged_prs']:,} public PRs merged"} for m in api_monthly()]
+    return column_chart(pts, label="Public pull requests merged per month, January 2022 to October 2026",
+                        band_from="2025-05", band_label="agents widely available", value_labels=("2022-01", "2025-05", pts[-1]["x"]))
+
+
+def merged_monthly_table():
+    return _table(["Month", "Public PRs merged"], [[_month_label(m["month"]), f"{m['merged_prs']:,}"] for m in api_monthly()])
+
+
+def merged_yearly_html():
+    rows = []
+    for y in api_yearly():
+        partial = y["months"] < 12
+        year = f"{y['year']} (Jan to {MONTH_NAMES[int(y['last'][5:]) - 1]})" if partial else str(y["year"])
+        change = "" if y["merged_change"] is None else f"{y['merged_change']:+.0%}" + (" vs same months" if partial else "")
+        rows.append(f"<tr><td>{year}</td><td>{y['merged_per_month'] / 1e6:.2f}M</td><td>{change}</td></tr>")
+    return ("<table><thead><tr><th>Year</th><th>Public PRs merged per month</th><th>Change</th></tr></thead><tbody>"
+            + "".join(rows) + "</tbody></table>")
+
+
+def new_repos_chart():
+    pts = []
+    for y in api_yearly():
+        partial = y["months"] < 12
+        pts.append({"x": str(y["year"]), "tick": f"Jan–{MONTH_NAMES[int(y['last'][5:]) - 1]} {y['year']}" if partial else str(y["year"]),
+                    "value": y["new_repos"], "color": BLUE_LIGHT if partial else BLUE,
+                    "tip": f"{y['year']}{' (January to ' + MONTH_NAMES[int(y['last'][5:]) - 1] + ' only)' if partial else ''}: "
+                           f"{y['new_repos']:,} new public repositories (not forks)"})
+    return column_chart(pts, label="New public repositories per year (not forks), 2022 to October 2026",
+                        value_labels=tuple(p["x"] for p in pts), legend=[("full year", BLUE), ("year so far", BLUE_LIGHT)])
+
+
+def new_repos_table():
+    rows = [[f"{y['year']}" + (" (Jan to Oct)" if y["months"] < 12 else ""), f"{y['new_repos']:,}",
+             "" if y["repos_change"] is None else f"{y['repos_change']:+.0%}" + (" vs same months" if y["months"] < 12 else "")]
+            for y in api_yearly()]
+    return _table(["Year", "New public repositories", "Change"], rows)
+
+
+AGENT_SERIES = [("Claude Code", ORANGE), ("Codex", BLUE), ("Copilot agent", AQUA), ("Cursor", BLUE_LIGHT), ("Devin and Jules", GRAY)]
 
 
 def agent_share_chart():
-    series = agent_share_monthly()
-    pts = [{"x": s["month"], "tick": "’" + s["month"][2:4] if s["month"].endswith("-01") else "", "value": s["share"],
-            "color": BLUE_LIGHT if s["sampled"] else BLUE,
-            "tip": f"{s['month']}: {s['share']:.2f}% of new PRs ({'sampled hours' if s['sampled'] else 'full data'})"} for s in series]
-    return column_chart(pts, label="Share of new public PRs with an AI-agent signal, by month", fmt=lambda v: f"{v:g}%",
-                        band_from="2025-05", band_label="coding agents launch", legend=[("sampled hours", BLUE_LIGHT), ("full data", BLUE)])
+    signals = agent_signals()
+    labels = [f"{MONTH_NAMES[int(s['month'][5:]) - 1]} ’{s['month'][2:4]}" for s in signals]
+    series = [(name, color, [s["shares"][name] for s in signals]) for name, color in AGENT_SERIES]
+    return stacked_columns(labels, series, label="Share of new public pull requests with an AI-tool signal, by tool, January 2025 to October 2026",
+                           fmt=_pct, tick_every=3)
 
 
 def agent_share_table():
-    return _table(["Month", "Share of new PRs", "Source"],
-                  [[s["month"], f"{s['share']:.2f}%", "sampled hours" if s["sampled"] else "full data"] for s in agent_share_monthly()])
+    names = [n for n, _ in AGENT_SERIES]
+    rows = [[_month_label(s["month"]), f"{s['opened']:,}"] + [_pct(s["shares"][n]) for n in names] + [_pct(s["total_share"])] for s in agent_signals()]
+    return _table(["Month", "New public PRs"] + names + ["All signals"], rows)
 
 
 def agent_tools_chart():
-    items = [{"name": n, "value": v, "tip": f"{n}: {v:,} PRs opened, Nov 2025 to Feb 2026"} for n, v in agent_tools()]
-    return hbar_chart(items, label="Public PRs opened by AI coding agents, Nov 2025 to Feb 2026")
+    last = agent_signals()[-1]
+    when = _month_label(last["month"])
+    items = sorted(({"name": n, "value": v, "tip": f"{n}: {v:,} public PRs opened in {when} ({_pct(last['shares'][n])} of all)"}
+                    for n, v in last["counts"].items()), key=lambda i: -i["value"])
+    return hbar_chart(items, label=f"Public pull requests opened with each tool's signal, {when}")
 
 
 def agent_tools_table():
-    return _table(["Agent", "PRs opened (Nov 2025 to Feb 2026)"], [[n, f"{v:,}"] for n, v in agent_tools()])
-
-
-# GitHub's own count of public contributions (Octoverse 2024 image alt "nearly 1 billion", 2025, 2026).
-PUBLIC_CONTRIBUTIONS = [("2024", 1.0e9, "nearly 1 billion"), ("2025", 1.12e9, "1.12 billion"), ("2026", 2.5e9, "2.5 billion")]
-
-
-def contributions_chart():
-    pts = [{"x": y, "value": v, "color": BLUE, "tip": f"{y}: {label} public contributions"} for y, v, label in PUBLIC_CONTRIBUTIONS]
-    return column_chart(pts, label="Public contributions on GitHub per year, GitHub's own count, 2024 to 2026",
-                        value_labels=("2024", "2025", "2026"))
-
-
-def contributions_table():
-    return _table(["Year", "Public contributions"], [[y, label] for y, _, label in PUBLIC_CONTRIBUTIONS])
-
-
-def agent_share_zoom_chart():
-    series = [s for s in agent_share_monthly() if s["month"] >= "2024-07"]
-    pts = [{"x": s["month"], "tick": s["month"][5:7] + "/" + s["month"][2:4] if s["month"][5:7] in ("01", "07") else "",
-            "value": s["share"], "color": BLUE_LIGHT if s["sampled"] else BLUE,
-            "tip": f"{s['month']}: {s['share']:.2f}% of new PRs ({'sampled hours' if s['sampled'] else 'full data'})"} for s in series]
-    return column_chart(pts, label="Share of new public PRs with an AI-agent signal, Jul 2024 to Jun 2026", fmt=lambda v: f"{v:g}%",
-                        band_from="2025-05", band_label="coding agents launch", legend=[("sampled hours", BLUE_LIGHT), ("full data", BLUE)])
+    last = agent_signals()[-1]
+    rows = [[n, f"{v:,}", _pct(last["shares"][n])] for n, v in sorted(last["counts"].items(), key=lambda kv: -kv[1])]
+    return _table(["Tool", f"Public PRs opened, {_month_label(last['month'])}", "Share of all new PRs"], rows)
 
 
 def pr_size_zoom_chart():
@@ -170,3 +233,13 @@ def pr_size_zoom_chart():
     pts.append({"x": "late 2025", "value": 35, "color": BLUE, "tip": "25 Sep to 8 Oct 2025 (full data): median merged PR adds 35 lines"})
     return column_chart(pts, label="Median lines added per merged public PR, 2022 to late 2025", fmt=lambda v: f"{v:g}",
                         value_labels=tuple(p["x"] for p in pts))
+
+
+def pr_size_table():
+    rows = [[r["year"], int(r["median_additions"])] for r in yearly()] + [["25 Sep to 8 Oct 2025", 35]]
+    return _table(["Year", "Median lines added per merged public PR"], rows)
+
+
+def validation_table():
+    rows = [[_month_label(m), kind, f"{gha:,}", f"{search:,}", f"{ratio:.2f}"] for m, kind, gha, search, ratio in validation()]
+    return _table(["Month", "Public PRs", "GH Archive", "Search API", "GH Archive ÷ Search"], rows)

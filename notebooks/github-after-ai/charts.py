@@ -165,7 +165,11 @@ def time_line_chart(points, *, label, fmt=compact, x_ticks, band_from=None, band
         parts.append(f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="4" fill="{BLUE}" stroke="{SURFACE}" stroke-width="2"/>')
         parts.append(f'<circle cx="{cx:.1f}" cy="{cy:.1f}" r="12" fill="transparent"><title>{escape(p["tip"])}</title></circle>')
     last = points[-1]
-    parts.append(f'<text x="{sx(last["x"]) + 10:.1f}" y="{y(last["value"]) + 4:.1f}" font-size="11" font-weight="600" fill="{INK}">{escape(fmt(last["value"]))}</text>')
+    lx, ly = sx(last["x"]), y(last["value"])
+    if lx + 50 > width:
+        parts.append(f'<text x="{lx - 8:.1f}" y="{ly - 8:.1f}" text-anchor="end" font-size="11" font-weight="600" fill="{INK}">{escape(fmt(last["value"]))}</text>')
+    else:
+        parts.append(f'<text x="{lx + 10:.1f}" y="{ly + 4:.1f}" font-size="11" font-weight="600" fill="{INK}">{escape(fmt(last["value"]))}</text>')
     return _frame("".join(parts), label)
 
 

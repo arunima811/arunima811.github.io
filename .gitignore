@@ -8,3 +8,9 @@ src/generated/
 public/notebooks/
 
 __pycache__/
+notebooks/github-after-ai/data/api/queries.log
+notebooks/github-after-ai/data/api/pr_samples.csv
+notebooks/github-after-ai/data/api/pr_sizes.csv
+notebooks/github-after-ai/scripts/*.jsonl
+notebooks/github-after-ai/scripts/*.out
+notebooks/github-after-ai/scripts/.search_pace

@@ -1,0 +1,7 @@
+prefix,tool_query,tool_prs_using_prefix,recall_tested,recall_head_prefix_slash,recall_head_prefix_noslash,recall_head_exact_ref,oct2025_count_head_slash,oct2025_count_head_noslash,precision_sample_n,precision_ref_starts_with_prefix,example_known_ref,nonmatching_refs
+codex,"""chatgpt.com/codex"" in:body",8/8,3,3,3,3,414100,417402,20,20,codex/fix-navbars-for-puzzle-and-2048,
+copilot,author:app/copilot-swe-agent,8/8,3,3,3,3,121719,122053,20,20,copilot/vscode1761955154774,
+claude,"""Generated with Claude Code"" in:body",5/8,3,3,3,3,29979,30811,20,20,claude/issue-131-20250927-1430,
+cursor,"""cursor.com/agents"" in:body",8/8,3,3,3,3,50903,51212,20,20,cursor/implement-responsive-css-with-mobile-hooks-6a6b,
+devin,author:app/devin-ai-integration,8/8,3,3,3,3,4867,4967,20,20,devin/1761867287-wikilink-support,
+is_public_check,is:pr is:merged merged:2025-09-01..2025-09-30,,,,,,5096001,5096001,,,,
